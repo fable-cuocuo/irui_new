@@ -87,6 +87,23 @@ class SeqRec(nn.Module):
             loss_sum = rec_loss_ISC + rec_loss_OSC
             return loss_sum, rec_loss_ISC, rec_loss_OSC, modified_index, common_prefer, personal_prefer
 
+        if self.config['rec_model'] == 'COMIREC':
+            neg_targets = neg_targets.type(torch.long)
+            pos_target = pos_target.unsqueeze(1)
+            neg_num = neg_targets.size()[1]
+
+            interest_emb = self.context_encoder(hist_item_ids, masks, return_all=True)
+            user_embeds, item_embeds = self.obtain_embeds(is_training=True)
+
+            pos_emb = item_embeds[pos_target].squeeze(1)
+            neg_emb = item_embeds[neg_targets]
+
+            pos_score = torch.einsum('bkd,bd->bk', interest_emb, pos_emb).max(dim=1, keepdim=True)[0]
+            neg_score = torch.einsum('bkd,bnd->bkn', interest_emb, neg_emb).max(dim=1)[0]
+
+            rec_loss = -(torch.log(torch.sigmoid(pos_score - neg_score)) / neg_num).sum(dim=1, keepdim=False)
+            return rec_loss
+
     def obtain_embeds(self, is_training):
         users_emb = self.context_encoder.user_emb.weight
         items_emb = self.context_encoder.item_emb.weight
@@ -191,8 +208,12 @@ class SeqRec(nn.Module):
 
         if self.config['rec_model'] == 'IOSC':
             output = self.recommender_forward(hist_item_ids, masks)
-
-        scores = torch.mul(output.unsqueeze(1), target_emb).sum(dim=2, keepdim=False)
+        
+        if self.config['rec_model'] == 'COMIREC':
+            interest_emb = self.context_encoder(hist_item_ids, masks, return_all=True)
+            scores = torch.einsum('bkd,bcd->bkc', interest_emb, target_emb).max(dim=1)[0]
+        else:
+            scores = torch.mul(output.unsqueeze(1), target_emb).sum(dim=2, keepdim=False)
         pos_score = scores[:, 0: 1]
         neg_scores = scores[:, 1: -1]
         ranks = (neg_scores > pos_score).long().sum(dim=1, keepdim=False)

@@ -10,6 +10,7 @@ from model.FPMC import FPMC_encoder
 from model.SASRec import SASRec_encoder
 from model.Bert4Rec import BERT_encoder
 from model.IOSCencoder import IOSC_encoder
+from model.ComiRec import ComiRec_encoder
 
 
 class Trainer:
@@ -174,6 +175,15 @@ class Trainer:
             self._optimizer_.step()
             return all_loss, modified_target_num, modified_hist_num
 
+        if self.config['rec_model'] == 'COMIREC':
+            self._model_.train()
+            self._optimizer_.zero_grad()
+            loss = self._model_(user_id, hist_item_ids, masks, pos_target, neg_targets, sample_idices)
+            all_loss = loss.sum()
+            all_loss.backward()
+            self._optimizer_.step()
+            return all_loss, modified_target_num, modified_hist_num
+
         if self.config['rec_model'] == 'IOSC':
             self._model_.train()
             self._optimizer_.zero_grad()
@@ -317,6 +327,8 @@ class Trainer:
             return FPMC_encoder(self.config)
         elif self.config['rec_model'] == 'BERT':
             return BERT_encoder(self.config)
+        elif self.config['rec_model'] == 'COMIREC':
+            return ComiRec_encoder(self.config)
         elif self.config['rec_model'] == 'IOSC':
             return IOSC_encoder(self.config)
 

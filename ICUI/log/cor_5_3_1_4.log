@@ -1,0 +1,3513 @@
+nohup: ignoring input
+########## DataInfo ##########
+reading seq.dat
+numUser:6040
+numItem:3417
+########## config ##########
+thread_num: 4
+dataset: ml1m
+eval_neg_num: 100
+train_neg_num: 10
+input_len: 5
+rec_model: SASRec
+train_type: train
+save_epochs: [100, 200, 300, 400]
+epoch_num: 500
+learning_rate: 0.001
+train_batch_size: 1024
+test_batch_size: 256
+drop_ratio: 0.1
+decay_factor: 0.9
+hidden_size: 50
+num_hidden_layers: 1
+num_attention_heads: 2
+intermediate_size: 100
+hidden_act: gelu
+hidden_dropout_prob: 0.1
+attention_probs_dropout_prob: 0.1
+type_vocab_size: 1
+initializer_range: 0.1
+loss_type: pairwise_sample
+weight_decay: 0.01
+device: cuda
+max_seq_len: 5
+layer_size: 1
+threshold: 1
+noise_ratio: 0.05
+candidate_num: 3
+high_loss_drop: 0.05
+weight_drop: 0.25
+encoder_loss: False
+user_num: 6040
+item_num: 3417
+generating train samples
+train_size: 987531, time: 3.9558212757110596
+abandoned 0(0.0) samples
+valid user num: 6040
+valid item num: 3416
+generating test samples
+test_size: 6040, time: 2.379864454269409
+abandoned 0(0.0) samples
+------------SASREC ENCODER YES------------
+============================================================
+Start Training
+============================================================
+################## epoch 0 ###########################
+loss: 868.7352, len_train_loader:965
+modified_target in every batch:0.0
+modified_hist in every batch :0.0
+########## current_metrics ##########
+ndcg_1: 0.15943708609271523
+ndcg_5: tensor([0.3015], device='cuda:0')
+ndcg_10: tensor([0.3501], device='cuda:0')
+ndcg_20: tensor([0.3859], device='cuda:0')
+hit_1: 0.15943708609271523
+hit_5: 0.43509933774834436
+hit_10: 0.5850993377483443
+hit_20: 0.7264900662251655
+ap: tensor([0.2945], device='cuda:0')
+########## best_metrics ##########
+ndcg_1: 0.15943708609271523
+ndcg_5: tensor([0.3015], device='cuda:0')
+ndcg_10: tensor([0.3501], device='cuda:0')
+ndcg_20: tensor([0.3859], device='cuda:0')
+hit_1: 0.15943708609271523
+hit_5: 0.43509933774834436
+hit_10: 0.5850993377483443
+hit_20: 0.7264900662251655
+ap: tensor([0.2945], device='cuda:0')
+no increase in recent 0 iters
+#########################################################
+################## epoch 1 ###########################
+loss: 512.6771, len_train_loader:965
+modified_target in every batch:1.999
+modified_hist in every batch :0.0
+########## current_metrics ##########
+ndcg_1: 0.2031456953642384
+ndcg_5: tensor([0.3624], device='cuda:0')
+ndcg_10: tensor([0.4053], device='cuda:0')
+ndcg_20: tensor([0.4373], device='cuda:0')
+hit_1: 0.2031456953642384
+hit_5: 0.5079470198675496
+hit_10: 0.6399006622516556
+hit_20: 0.7658940397350993
+ap: tensor([0.3468], device='cuda:0')
+########## best_metrics ##########
+ndcg_1: 0.2031456953642384
+ndcg_5: tensor([0.3624], device='cuda:0')
+ndcg_10: tensor([0.4053], device='cuda:0')
+ndcg_20: tensor([0.4373], device='cuda:0')
+hit_1: 0.2031456953642384
+hit_5: 0.5079470198675496
+hit_10: 0.6399006622516556
+hit_20: 0.7658940397350993
+ap: tensor([0.3468], device='cuda:0')
+no increase in recent 0 iters
+#########################################################
+################## epoch 2 ###########################
+loss: 448.5531, len_train_loader:965
+modified_target in every batch:4.9969
+modified_hist in every batch :0.0
+########## current_metrics ##########
+ndcg_1: 0.22466887417218542
+ndcg_5: tensor([0.3857], device='cuda:0')
+ndcg_10: tensor([0.4290], device='cuda:0')
+ndcg_20: tensor([0.4571], device='cuda:0')
+hit_1: 0.22466887417218542
+hit_5: 0.5332781456953642
+hit_10: 0.6667218543046357
+hit_20: 0.7774834437086092
+ap: tensor([0.3683], device='cuda:0')
+########## best_metrics ##########
+ndcg_1: 0.22466887417218542
+ndcg_5: tensor([0.3857], device='cuda:0')
+ndcg_10: tensor([0.4290], device='cuda:0')
+ndcg_20: tensor([0.4571], device='cuda:0')
+hit_1: 0.22466887417218542
+hit_5: 0.5332781456953642
+hit_10: 0.6667218543046357
+hit_20: 0.7774834437086092
+ap: tensor([0.3683], device='cuda:0')
+no increase in recent 0 iters
+#########################################################
+################## epoch 3 ###########################
+loss: 418.3885, len_train_loader:965
+modified_target in every batch:7.9948
+modified_hist in every batch :0.0
+########## current_metrics ##########
+ndcg_1: 0.23841059602649006
+ndcg_5: tensor([0.4025], device='cuda:0')
+ndcg_10: tensor([0.4429], device='cuda:0')
+ndcg_20: tensor([0.4694], device='cuda:0')
+hit_1: 0.23841059602649006
+hit_5: 0.553476821192053
+hit_10: 0.6781456953642384
+hit_20: 0.7832781456953642
+ap: tensor([0.3821], device='cuda:0')
+########## best_metrics ##########
+ndcg_1: 0.23841059602649006
+ndcg_5: tensor([0.4025], device='cuda:0')
+ndcg_10: tensor([0.4429], device='cuda:0')
+ndcg_20: tensor([0.4694], device='cuda:0')
+hit_1: 0.23841059602649006
+hit_5: 0.553476821192053
+hit_10: 0.6781456953642384
+hit_20: 0.7832781456953642
+ap: tensor([0.3821], device='cuda:0')
+no increase in recent 0 iters
+#########################################################
+################## epoch 4 ###########################
+loss: 400.0211, len_train_loader:965
+modified_target in every batch:9.9938
+modified_hist in every batch :0.0
+########## current_metrics ##########
+ndcg_1: 0.24834437086092714
+ndcg_5: tensor([0.4141], device='cuda:0')
+ndcg_10: tensor([0.4536], device='cuda:0')
+ndcg_20: tensor([0.4798], device='cuda:0')
+hit_1: 0.24834437086092714
+hit_5: 0.5630794701986755
+hit_10: 0.6844370860927153
+hit_20: 0.7882450331125828
+ap: tensor([0.3937], device='cuda:0')
+########## best_metrics ##########
+ndcg_1: 0.24834437086092714
+ndcg_5: tensor([0.4141], device='cuda:0')
+ndcg_10: tensor([0.4536], device='cuda:0')
+ndcg_20: tensor([0.4798], device='cuda:0')
+hit_1: 0.24834437086092714
+hit_5: 0.5630794701986755
+hit_10: 0.6844370860927153
+hit_20: 0.7882450331125828
+ap: tensor([0.3937], device='cuda:0')
+no increase in recent 0 iters
+#########################################################
+################## epoch 5 ###########################
+loss: 387.9773, len_train_loader:965
+modified_target in every batch:12.9917
+modified_hist in every batch :0.0
+########## current_metrics ##########
+ndcg_1: 0.2548013245033113
+ndcg_5: tensor([0.4206], device='cuda:0')
+ndcg_10: tensor([0.4611], device='cuda:0')
+ndcg_20: tensor([0.4837], device='cuda:0')
+hit_1: 0.2548013245033113
+hit_5: 0.570364238410596
+hit_10: 0.6956953642384106
+hit_20: 0.784933774834437
+ap: tensor([0.3995], device='cuda:0')
+########## best_metrics ##########
+ndcg_1: 0.2548013245033113
+ndcg_5: tensor([0.4206], device='cuda:0')
+ndcg_10: tensor([0.4611], device='cuda:0')
+ndcg_20: tensor([0.4837], device='cuda:0')
+hit_1: 0.2548013245033113
+hit_5: 0.570364238410596
+hit_10: 0.6956953642384106
+hit_20: 0.7882450331125828
+ap: tensor([0.3995], device='cuda:0')
+no increase in recent 0 iters
+#########################################################
+################## epoch 6 ###########################
+loss: 379.1916, len_train_loader:965
+modified_target in every batch:15.9896
+modified_hist in every batch :0.0
+########## current_metrics ##########
+ndcg_1: 0.25596026490066226
+ndcg_5: tensor([0.4180], device='cuda:0')
+ndcg_10: tensor([0.4601], device='cuda:0')
+ndcg_20: tensor([0.4847], device='cuda:0')
+hit_1: 0.25596026490066226
+hit_5: 0.5637417218543046
+hit_10: 0.6932119205298013
+hit_20: 0.7903973509933775
+ap: tensor([0.3992], device='cuda:0')
+########## best_metrics ##########
+ndcg_1: 0.25596026490066226
+ndcg_5: tensor([0.4206], device='cuda:0')
+ndcg_10: tensor([0.4611], device='cuda:0')
+ndcg_20: tensor([0.4847], device='cuda:0')
+hit_1: 0.25596026490066226
+hit_5: 0.570364238410596
+hit_10: 0.6956953642384106
+hit_20: 0.7903973509933775
+ap: tensor([0.3995], device='cuda:0')
+no increase in recent 0 iters
+#########################################################
+################## epoch 7 ###########################
+loss: 373.0699, len_train_loader:965
+modified_target in every batch:17.9886
+modified_hist in every batch :0.0
+########## current_metrics ##########
+ndcg_1: 0.25927152317880797
+ndcg_5: tensor([0.4233], device='cuda:0')
+ndcg_10: tensor([0.4634], device='cuda:0')
+ndcg_20: tensor([0.4874], device='cuda:0')
+hit_1: 0.25927152317880797
+hit_5: 0.5701986754966888
+hit_10: 0.6947019867549669
+hit_20: 0.7892384105960265
+ap: tensor([0.4031], device='cuda:0')
+########## best_metrics ##########
+ndcg_1: 0.25927152317880797
+ndcg_5: tensor([0.4233], device='cuda:0')
+ndcg_10: tensor([0.4634], device='cuda:0')
+ndcg_20: tensor([0.4874], device='cuda:0')
+hit_1: 0.25927152317880797
+hit_5: 0.570364238410596
+hit_10: 0.6956953642384106
+hit_20: 0.7903973509933775
+ap: tensor([0.4031], device='cuda:0')
+no increase in recent 0 iters
+#########################################################
+################## epoch 8 ###########################
+loss: 367.7234, len_train_loader:965
+modified_target in every batch:20.9865
+modified_hist in every batch :0.0
+########## current_metrics ##########
+ndcg_1: 0.25678807947019866
+ndcg_5: tensor([0.4219], device='cuda:0')
+ndcg_10: tensor([0.4630], device='cuda:0')
+ndcg_20: tensor([0.4879], device='cuda:0')
+hit_1: 0.25678807947019866
+hit_5: 0.569205298013245
+hit_10: 0.695364238410596
+hit_20: 0.7935430463576159
+ap: tensor([0.4023], device='cuda:0')
+########## best_metrics ##########
+ndcg_1: 0.25927152317880797
+ndcg_5: tensor([0.4233], device='cuda:0')
+ndcg_10: tensor([0.4634], device='cuda:0')
+ndcg_20: tensor([0.4879], device='cuda:0')
+hit_1: 0.25927152317880797
+hit_5: 0.570364238410596
+hit_10: 0.6956953642384106
+hit_20: 0.7935430463576159
+ap: tensor([0.4031], device='cuda:0')
+no increase in recent 0 iters
+#########################################################
+################## epoch 9 ###########################
+loss: 363.4103, len_train_loader:965
+modified_target in every batch:23.9845
+modified_hist in every batch :0.0
+########## current_metrics ##########
+ndcg_1: 0.2632450331125828
+ndcg_5: tensor([0.4272], device='cuda:0')
+ndcg_10: tensor([0.4665], device='cuda:0')
+ndcg_20: tensor([0.4918], device='cuda:0')
+hit_1: 0.2632450331125828
+hit_5: 0.5735099337748344
+hit_10: 0.6945364238410596
+hit_20: 0.7938741721854304
+ap: tensor([0.4073], device='cuda:0')
+########## best_metrics ##########
+ndcg_1: 0.2632450331125828
+ndcg_5: tensor([0.4272], device='cuda:0')
+ndcg_10: tensor([0.4665], device='cuda:0')
+ndcg_20: tensor([0.4918], device='cuda:0')
+hit_1: 0.2632450331125828
+hit_5: 0.5735099337748344
+hit_10: 0.6956953642384106
+hit_20: 0.7938741721854304
+ap: tensor([0.4073], device='cuda:0')
+no increase in recent 0 iters
+#########################################################
+################## epoch 10 ###########################
+loss: 359.9441, len_train_loader:965
+modified_target in every batch:25.9834
+modified_hist in every batch :0.0
+########## current_metrics ##########
+ndcg_1: 0.2713576158940397
+ndcg_5: tensor([0.4307], device='cuda:0')
+ndcg_10: tensor([0.4708], device='cuda:0')
+ndcg_20: tensor([0.4959], device='cuda:0')
+hit_1: 0.2713576158940397
+hit_5: 0.5740066225165563
+hit_10: 0.6970198675496688
+hit_20: 0.7960264900662252
+ap: tensor([0.4120], device='cuda:0')
+########## best_metrics ##########
+ndcg_1: 0.2713576158940397
+ndcg_5: tensor([0.4307], device='cuda:0')
+ndcg_10: tensor([0.4708], device='cuda:0')
+ndcg_20: tensor([0.4959], device='cuda:0')
+hit_1: 0.2713576158940397
+hit_5: 0.5740066225165563
+hit_10: 0.6970198675496688
+hit_20: 0.7960264900662252
+ap: tensor([0.4120], device='cuda:0')
+no increase in recent 0 iters
+#########################################################
+################## epoch 11 ###########################
+loss: 356.8292, len_train_loader:965
+modified_target in every batch:28.9813
+modified_hist in every batch :0.0
+########## current_metrics ##########
+ndcg_1: 0.2670529801324503
+ndcg_5: tensor([0.4293], device='cuda:0')
+ndcg_10: tensor([0.4697], device='cuda:0')
+ndcg_20: tensor([0.4947], device='cuda:0')
+hit_1: 0.2670529801324503
+hit_5: 0.5741721854304636
+hit_10: 0.6986754966887417
+hit_20: 0.7971854304635762
+ap: tensor([0.4101], device='cuda:0')
+########## best_metrics ##########
+ndcg_1: 0.2713576158940397
+ndcg_5: tensor([0.4307], device='cuda:0')
+ndcg_10: tensor([0.4708], device='cuda:0')
+ndcg_20: tensor([0.4959], device='cuda:0')
+hit_1: 0.2713576158940397
+hit_5: 0.5741721854304636
+hit_10: 0.6986754966887417
+hit_20: 0.7971854304635762
+ap: tensor([0.4120], device='cuda:0')
+no increase in recent 0 iters
+#########################################################
+################## epoch 12 ###########################
+loss: 354.4233, len_train_loader:965
+modified_target in every batch:31.9793
+modified_hist in every batch :0.0
+########## current_metrics ##########
+ndcg_1: 0.2677152317880795
+ndcg_5: tensor([0.4321], device='cuda:0')
+ndcg_10: tensor([0.4713], device='cuda:0')
+ndcg_20: tensor([0.4965], device='cuda:0')
+hit_1: 0.2677152317880795
+hit_5: 0.5779801324503311
+hit_10: 0.6985099337748344
+hit_20: 0.7975165562913907
+ap: tensor([0.4121], device='cuda:0')
+########## best_metrics ##########
+ndcg_1: 0.2713576158940397
+ndcg_5: tensor([0.4321], device='cuda:0')
+ndcg_10: tensor([0.4713], device='cuda:0')
+ndcg_20: tensor([0.4965], device='cuda:0')
+hit_1: 0.2713576158940397
+hit_5: 0.5779801324503311
+hit_10: 0.6986754966887417
+hit_20: 0.7975165562913907
+ap: tensor([0.4121], device='cuda:0')
+no increase in recent 0 iters
+#########################################################
+################## epoch 13 ###########################
+loss: 352.048, len_train_loader:965
+modified_target in every batch:34.9772
+modified_hist in every batch :0.0
+########## current_metrics ##########
+ndcg_1: 0.2682119205298013
+ndcg_5: tensor([0.4306], device='cuda:0')
+ndcg_10: tensor([0.4704], device='cuda:0')
+ndcg_20: tensor([0.4954], device='cuda:0')
+hit_1: 0.2682119205298013
+hit_5: 0.5776490066225165
+hit_10: 0.7004966887417219
+hit_20: 0.7991721854304635
+ap: tensor([0.4104], device='cuda:0')
+########## best_metrics ##########
+ndcg_1: 0.2713576158940397
+ndcg_5: tensor([0.4321], device='cuda:0')
+ndcg_10: tensor([0.4713], device='cuda:0')
+ndcg_20: tensor([0.4965], device='cuda:0')
+hit_1: 0.2713576158940397
+hit_5: 0.5779801324503311
+hit_10: 0.7004966887417219
+hit_20: 0.7991721854304635
+ap: tensor([0.4121], device='cuda:0')
+no increase in recent 0 iters
+#########################################################
+################## epoch 14 ###########################
+loss: 350.2371, len_train_loader:965
+modified_target in every batch:36.9762
+modified_hist in every batch :0.0
+########## current_metrics ##########
+ndcg_1: 0.2670529801324503
+ndcg_5: tensor([0.4319], device='cuda:0')
+ndcg_10: tensor([0.4707], device='cuda:0')
+ndcg_20: tensor([0.4957], device='cuda:0')
+hit_1: 0.2670529801324503
+hit_5: 0.5794701986754967
+hit_10: 0.6986754966887417
+hit_20: 0.7970198675496689
+ap: tensor([0.4113], device='cuda:0')
+########## best_metrics ##########
+ndcg_1: 0.2713576158940397
+ndcg_5: tensor([0.4321], device='cuda:0')
+ndcg_10: tensor([0.4713], device='cuda:0')
+ndcg_20: tensor([0.4965], device='cuda:0')
+hit_1: 0.2713576158940397
+hit_5: 0.5794701986754967
+hit_10: 0.7004966887417219
+hit_20: 0.7991721854304635
+ap: tensor([0.4121], device='cuda:0')
+no increase in recent 0 iters
+#########################################################
+################## epoch 15 ###########################
+loss: 348.4888, len_train_loader:965
+modified_target in every batch:39.9741
+modified_hist in every batch :0.0
+########## current_metrics ##########
+ndcg_1: 0.27102649006622515
+ndcg_5: tensor([0.4321], device='cuda:0')
+ndcg_10: tensor([0.4723], device='cuda:0')
+ndcg_20: tensor([0.4983], device='cuda:0')
+hit_1: 0.27102649006622515
+hit_5: 0.5756622516556291
+hit_10: 0.6993377483443709
+hit_20: 0.8018211920529801
+ap: tensor([0.4134], device='cuda:0')
+########## best_metrics ##########
+ndcg_1: 0.2713576158940397
+ndcg_5: tensor([0.4321], device='cuda:0')
+ndcg_10: tensor([0.4723], device='cuda:0')
+ndcg_20: tensor([0.4983], device='cuda:0')
+hit_1: 0.2713576158940397
+hit_5: 0.5794701986754967
+hit_10: 0.7004966887417219
+hit_20: 0.8018211920529801
+ap: tensor([0.4134], device='cuda:0')
+no increase in recent 0 iters
+#########################################################
+################## epoch 16 ###########################
+loss: 346.6942, len_train_loader:965
+modified_target in every batch:42.972
+modified_hist in every batch :0.0
+########## current_metrics ##########
+ndcg_1: 0.2723509933774834
+ndcg_5: tensor([0.4364], device='cuda:0')
+ndcg_10: tensor([0.4754], device='cuda:0')
+ndcg_20: tensor([0.5003], device='cuda:0')
+hit_1: 0.2723509933774834
+hit_5: 0.5824503311258278
+hit_10: 0.702317880794702
+hit_20: 0.8008278145695364
+ap: tensor([0.4161], device='cuda:0')
+########## best_metrics ##########
+ndcg_1: 0.2723509933774834
+ndcg_5: tensor([0.4364], device='cuda:0')
+ndcg_10: tensor([0.4754], device='cuda:0')
+ndcg_20: tensor([0.5003], device='cuda:0')
+hit_1: 0.2723509933774834
+hit_5: 0.5824503311258278
+hit_10: 0.702317880794702
+hit_20: 0.8018211920529801
+ap: tensor([0.4161], device='cuda:0')
+no increase in recent 0 iters
+#########################################################
+################## epoch 17 ###########################
+loss: 345.1967, len_train_loader:965
+modified_target in every batch:44.971
+modified_hist in every batch :0.0
+########## current_metrics ##########
+ndcg_1: 0.26903973509933776
+ndcg_5: tensor([0.4342], device='cuda:0')
+ndcg_10: tensor([0.4739], device='cuda:0')
+ndcg_20: tensor([0.4977], device='cuda:0')
+hit_1: 0.26903973509933776
+hit_5: 0.581953642384106
+hit_10: 0.7044701986754967
+hit_20: 0.7983443708609271
+ap: tensor([0.4133], device='cuda:0')
+########## best_metrics ##########
+ndcg_1: 0.2723509933774834
+ndcg_5: tensor([0.4364], device='cuda:0')
+ndcg_10: tensor([0.4754], device='cuda:0')
+ndcg_20: tensor([0.5003], device='cuda:0')
+hit_1: 0.2723509933774834
+hit_5: 0.5824503311258278
+hit_10: 0.7044701986754967
+hit_20: 0.8018211920529801
+ap: tensor([0.4161], device='cuda:0')
+no increase in recent 0 iters
+#########################################################
+################## epoch 18 ###########################
+loss: 343.839, len_train_loader:965
+modified_target in every batch:47.9689
+modified_hist in every batch :0.0
+########## current_metrics ##########
+ndcg_1: 0.2720198675496689
+ndcg_5: tensor([0.4349], device='cuda:0')
+ndcg_10: tensor([0.4745], device='cuda:0')
+ndcg_20: tensor([0.4996], device='cuda:0')
+hit_1: 0.2720198675496689
+hit_5: 0.580794701986755
+hit_10: 0.702317880794702
+hit_20: 0.8016556291390728
+ap: tensor([0.4149], device='cuda:0')
+########## best_metrics ##########
+ndcg_1: 0.2723509933774834
+ndcg_5: tensor([0.4364], device='cuda:0')
+ndcg_10: tensor([0.4754], device='cuda:0')
+ndcg_20: tensor([0.5003], device='cuda:0')
+hit_1: 0.2723509933774834
+hit_5: 0.5824503311258278
+hit_10: 0.7044701986754967
+hit_20: 0.8018211920529801
+ap: tensor([0.4161], device='cuda:0')
+no increase in recent 1 iters
+#########################################################
+################## epoch 19 ###########################
+loss: 342.5419, len_train_loader:965
+modified_target in every batch:50.9668
+modified_hist in every batch :0.0
+########## current_metrics ##########
+ndcg_1: 0.27417218543046357
+ndcg_5: tensor([0.4343], device='cuda:0')
+ndcg_10: tensor([0.4748], device='cuda:0')
+ndcg_20: tensor([0.5000], device='cuda:0')
+hit_1: 0.27417218543046357
+hit_5: 0.5778145695364238
+hit_10: 0.7016556291390729
+hit_20: 0.8013245033112583
+ap: tensor([0.4156], device='cuda:0')
+########## best_metrics ##########
+ndcg_1: 0.27417218543046357
+ndcg_5: tensor([0.4364], device='cuda:0')
+ndcg_10: tensor([0.4754], device='cuda:0')
+ndcg_20: tensor([0.5003], device='cuda:0')
+hit_1: 0.27417218543046357
+hit_5: 0.5824503311258278
+hit_10: 0.7044701986754967
+hit_20: 0.8018211920529801
+ap: tensor([0.4161], device='cuda:0')
+no increase in recent 0 iters
+#########################################################
+################## epoch 20 ###########################
+loss: 330.3958, len_train_loader:965
+modified_target in every batch:50.9668
+modified_hist in every batch :456.1026
+########## current_metrics ##########
+ndcg_1: 0.27433774834437086
+ndcg_5: tensor([0.4356], device='cuda:0')
+ndcg_10: tensor([0.4750], device='cuda:0')
+ndcg_20: tensor([0.4996], device='cuda:0')
+hit_1: 0.27433774834437086
+hit_5: 0.5779801324503311
+hit_10: 0.6995033112582781
+hit_20: 0.7963576158940397
+ap: tensor([0.4166], device='cuda:0')
+########## best_metrics ##########
+ndcg_1: 0.27433774834437086
+ndcg_5: tensor([0.4364], device='cuda:0')
+ndcg_10: tensor([0.4754], device='cuda:0')
+ndcg_20: tensor([0.5003], device='cuda:0')
+hit_1: 0.27433774834437086
+hit_5: 0.5824503311258278
+hit_10: 0.7044701986754967
+hit_20: 0.8018211920529801
+ap: tensor([0.4166], device='cuda:0')
+no increase in recent 0 iters
+#########################################################
+################## epoch 21 ###########################
+loss: 330.0061, len_train_loader:965
+modified_target in every batch:50.9668
+modified_hist in every batch :457.4073
+########## current_metrics ##########
+ndcg_1: 0.27533112582781455
+ndcg_5: tensor([0.4364], device='cuda:0')
+ndcg_10: tensor([0.4768], device='cuda:0')
+ndcg_20: tensor([0.5014], device='cuda:0')
+hit_1: 0.27533112582781455
+hit_5: 0.581953642384106
+hit_10: 0.7059602649006622
+hit_20: 0.8028145695364238
+ap: tensor([0.4169], device='cuda:0')
+########## best_metrics ##########
+ndcg_1: 0.27533112582781455
+ndcg_5: tensor([0.4364], device='cuda:0')
+ndcg_10: tensor([0.4768], device='cuda:0')
+ndcg_20: tensor([0.5014], device='cuda:0')
+hit_1: 0.27533112582781455
+hit_5: 0.5824503311258278
+hit_10: 0.7059602649006622
+hit_20: 0.8028145695364238
+ap: tensor([0.4169], device='cuda:0')
+no increase in recent 0 iters
+#########################################################
+################## epoch 22 ###########################
+loss: 329.3108, len_train_loader:965
+modified_target in every batch:50.9668
+modified_hist in every batch :456.1233
+########## current_metrics ##########
+ndcg_1: 0.272682119205298
+ndcg_5: tensor([0.4384], device='cuda:0')
+ndcg_10: tensor([0.4781], device='cuda:0')
+ndcg_20: tensor([0.5013], device='cuda:0')
+hit_1: 0.272682119205298
+hit_5: 0.5847682119205299
+hit_10: 0.706953642384106
+hit_20: 0.7981788079470199
+ap: tensor([0.4179], device='cuda:0')
+########## best_metrics ##########
+ndcg_1: 0.27533112582781455
+ndcg_5: tensor([0.4384], device='cuda:0')
+ndcg_10: tensor([0.4781], device='cuda:0')
+ndcg_20: tensor([0.5014], device='cuda:0')
+hit_1: 0.27533112582781455
+hit_5: 0.5847682119205299
+hit_10: 0.706953642384106
+hit_20: 0.8028145695364238
+ap: tensor([0.4179], device='cuda:0')
+no increase in recent 0 iters
+#########################################################
+################## epoch 23 ###########################
+loss: 329.4855, len_train_loader:965
+modified_target in every batch:50.9668
+modified_hist in every batch :456.6218
+########## current_metrics ##########
+ndcg_1: 0.2728476821192053
+ndcg_5: tensor([0.4382], device='cuda:0')
+ndcg_10: tensor([0.4783], device='cuda:0')
+ndcg_20: tensor([0.5007], device='cuda:0')
+hit_1: 0.2728476821192053
+hit_5: 0.5865894039735099
+hit_10: 0.7100993377483443
+hit_20: 0.7981788079470199
+ap: tensor([0.4169], device='cuda:0')
+########## best_metrics ##########
+ndcg_1: 0.27533112582781455
+ndcg_5: tensor([0.4384], device='cuda:0')
+ndcg_10: tensor([0.4783], device='cuda:0')
+ndcg_20: tensor([0.5014], device='cuda:0')
+hit_1: 0.27533112582781455
+hit_5: 0.5865894039735099
+hit_10: 0.7100993377483443
+hit_20: 0.8028145695364238
+ap: tensor([0.4179], device='cuda:0')
+no increase in recent 0 iters
+#########################################################
+################## epoch 24 ###########################
+loss: 328.3673, len_train_loader:965
+modified_target in every batch:50.9668
+modified_hist in every batch :456.1731
+########## current_metrics ##########
+ndcg_1: 0.2802980132450331
+ndcg_5: tensor([0.4410], device='cuda:0')
+ndcg_10: tensor([0.4808], device='cuda:0')
+ndcg_20: tensor([0.5040], device='cuda:0')
+hit_1: 0.2802980132450331
+hit_5: 0.5852649006622517
+hit_10: 0.7079470198675497
+hit_20: 0.7998344370860927
+ap: tensor([0.4211], device='cuda:0')
+########## best_metrics ##########
+ndcg_1: 0.2802980132450331
+ndcg_5: tensor([0.4410], device='cuda:0')
+ndcg_10: tensor([0.4808], device='cuda:0')
+ndcg_20: tensor([0.5040], device='cuda:0')
+hit_1: 0.2802980132450331
+hit_5: 0.5865894039735099
+hit_10: 0.7100993377483443
+hit_20: 0.8028145695364238
+ap: tensor([0.4211], device='cuda:0')
+no increase in recent 0 iters
+#########################################################
+################## epoch 25 ###########################
+loss: 327.3282, len_train_loader:965
+modified_target in every batch:50.9668
+modified_hist in every batch :456.4352
+########## current_metrics ##########
+ndcg_1: 0.27566225165562913
+ndcg_5: tensor([0.4378], device='cuda:0')
+ndcg_10: tensor([0.4777], device='cuda:0')
+ndcg_20: tensor([0.5021], device='cuda:0')
+hit_1: 0.27566225165562913
+hit_5: 0.5824503311258278
+hit_10: 0.7049668874172186
+hit_20: 0.801158940397351
+ap: tensor([0.4182], device='cuda:0')
+########## best_metrics ##########
+ndcg_1: 0.2802980132450331
+ndcg_5: tensor([0.4410], device='cuda:0')
+ndcg_10: tensor([0.4808], device='cuda:0')
+ndcg_20: tensor([0.5040], device='cuda:0')
+hit_1: 0.2802980132450331
+hit_5: 0.5865894039735099
+hit_10: 0.7100993377483443
+hit_20: 0.8028145695364238
+ap: tensor([0.4211], device='cuda:0')
+no increase in recent 1 iters
+#########################################################
+################## epoch 26 ###########################
+loss: 326.9458, len_train_loader:965
+modified_target in every batch:50.9668
+modified_hist in every batch :456.8093
+########## current_metrics ##########
+ndcg_1: 0.2728476821192053
+ndcg_5: tensor([0.4370], device='cuda:0')
+ndcg_10: tensor([0.4775], device='cuda:0')
+ndcg_20: tensor([0.5012], device='cuda:0')
+hit_1: 0.2728476821192053
+hit_5: 0.5839403973509933
+hit_10: 0.7087748344370861
+hit_20: 0.8026490066225166
+ap: tensor([0.4165], device='cuda:0')
+########## best_metrics ##########
+ndcg_1: 0.2802980132450331
+ndcg_5: tensor([0.4410], device='cuda:0')
+ndcg_10: tensor([0.4808], device='cuda:0')
+ndcg_20: tensor([0.5040], device='cuda:0')
+hit_1: 0.2802980132450331
+hit_5: 0.5865894039735099
+hit_10: 0.7100993377483443
+hit_20: 0.8028145695364238
+ap: tensor([0.4211], device='cuda:0')
+no increase in recent 2 iters
+#########################################################
+################## epoch 27 ###########################
+loss: 326.5634, len_train_loader:965
+modified_target in every batch:50.9668
+modified_hist in every batch :456.5244
+########## current_metrics ##########
+ndcg_1: 0.2802980132450331
+ndcg_5: tensor([0.4400], device='cuda:0')
+ndcg_10: tensor([0.4800], device='cuda:0')
+ndcg_20: tensor([0.5040], device='cuda:0')
+hit_1: 0.2802980132450331
+hit_5: 0.5832781456953643
+hit_10: 0.7062913907284768
+hit_20: 0.8006622516556291
+ap: tensor([0.4209], device='cuda:0')
+########## best_metrics ##########
+ndcg_1: 0.2802980132450331
+ndcg_5: tensor([0.4410], device='cuda:0')
+ndcg_10: tensor([0.4808], device='cuda:0')
+ndcg_20: tensor([0.5040], device='cuda:0')
+hit_1: 0.2802980132450331
+hit_5: 0.5865894039735099
+hit_10: 0.7100993377483443
+hit_20: 0.8028145695364238
+ap: tensor([0.4211], device='cuda:0')
+no increase in recent 0 iters
+#########################################################
+################## epoch 28 ###########################
+loss: 325.9469, len_train_loader:965
+modified_target in every batch:50.9668
+modified_hist in every batch :457.0953
+########## current_metrics ##########
+ndcg_1: 0.277317880794702
+ndcg_5: tensor([0.4383], device='cuda:0')
+ndcg_10: tensor([0.4793], device='cuda:0')
+ndcg_20: tensor([0.5034], device='cuda:0')
+hit_1: 0.277317880794702
+hit_5: 0.5826158940397351
+hit_10: 0.7082781456953643
+hit_20: 0.803476821192053
+ap: tensor([0.4192], device='cuda:0')
+########## best_metrics ##########
+ndcg_1: 0.2802980132450331
+ndcg_5: tensor([0.4410], device='cuda:0')
+ndcg_10: tensor([0.4808], device='cuda:0')
+ndcg_20: tensor([0.5040], device='cuda:0')
+hit_1: 0.2802980132450331
+hit_5: 0.5865894039735099
+hit_10: 0.7100993377483443
+hit_20: 0.803476821192053
+ap: tensor([0.4211], device='cuda:0')
+no increase in recent 0 iters
+#########################################################
+################## epoch 29 ###########################
+loss: 325.5323, len_train_loader:965
+modified_target in every batch:50.9668
+modified_hist in every batch :456.6725
+########## current_metrics ##########
+ndcg_1: 0.27533112582781455
+ndcg_5: tensor([0.4369], device='cuda:0')
+ndcg_10: tensor([0.4757], device='cuda:0')
+ndcg_20: tensor([0.4999], device='cuda:0')
+hit_1: 0.27533112582781455
+hit_5: 0.5836092715231788
+hit_10: 0.7031456953642384
+hit_20: 0.7986754966887417
+ap: tensor([0.4162], device='cuda:0')
+########## best_metrics ##########
+ndcg_1: 0.2802980132450331
+ndcg_5: tensor([0.4410], device='cuda:0')
+ndcg_10: tensor([0.4808], device='cuda:0')
+ndcg_20: tensor([0.5040], device='cuda:0')
+hit_1: 0.2802980132450331
+hit_5: 0.5865894039735099
+hit_10: 0.7100993377483443
+hit_20: 0.803476821192053
+ap: tensor([0.4211], device='cuda:0')
+no increase in recent 1 iters
+#########################################################
+################## epoch 30 ###########################
+loss: 325.5528, len_train_loader:965
+modified_target in every batch:50.9668
+modified_hist in every batch :456.2943
+########## current_metrics ##########
+ndcg_1: 0.2774834437086093
+ndcg_5: tensor([0.4410], device='cuda:0')
+ndcg_10: tensor([0.4804], device='cuda:0')
+ndcg_20: tensor([0.5033], device='cuda:0')
+hit_1: 0.2774834437086093
+hit_5: 0.5872516556291391
+hit_10: 0.708112582781457
+hit_20: 0.7980132450331126
+ap: tensor([0.4204], device='cuda:0')
+########## best_metrics ##########
+ndcg_1: 0.2802980132450331
+ndcg_5: tensor([0.4410], device='cuda:0')
+ndcg_10: tensor([0.4808], device='cuda:0')
+ndcg_20: tensor([0.5040], device='cuda:0')
+hit_1: 0.2802980132450331
+hit_5: 0.5872516556291391
+hit_10: 0.7100993377483443
+hit_20: 0.803476821192053
+ap: tensor([0.4211], device='cuda:0')
+no increase in recent 0 iters
+#########################################################
+################## epoch 31 ###########################
+loss: 324.9646, len_train_loader:965
+modified_target in every batch:50.9668
+modified_hist in every batch :456.056
+########## current_metrics ##########
+ndcg_1: 0.2758278145695364
+ndcg_5: tensor([0.4375], device='cuda:0')
+ndcg_10: tensor([0.4775], device='cuda:0')
+ndcg_20: tensor([0.5012], device='cuda:0')
+hit_1: 0.2758278145695364
+hit_5: 0.5829470198675497
+hit_10: 0.7056291390728476
+hit_20: 0.7986754966887417
+ap: tensor([0.4177], device='cuda:0')
+########## best_metrics ##########
+ndcg_1: 0.2802980132450331
+ndcg_5: tensor([0.4410], device='cuda:0')
+ndcg_10: tensor([0.4808], device='cuda:0')
+ndcg_20: tensor([0.5040], device='cuda:0')
+hit_1: 0.2802980132450331
+hit_5: 0.5872516556291391
+hit_10: 0.7100993377483443
+hit_20: 0.803476821192053
+ap: tensor([0.4211], device='cuda:0')
+no increase in recent 1 iters
+#########################################################
+################## epoch 32 ###########################
+loss: 325.2339, len_train_loader:965
+modified_target in every batch:50.9668
+modified_hist in every batch :456.4611
+########## current_metrics ##########
+ndcg_1: 0.2769867549668874
+ndcg_5: tensor([0.4385], device='cuda:0')
+ndcg_10: tensor([0.4781], device='cuda:0')
+ndcg_20: tensor([0.5022], device='cuda:0')
+hit_1: 0.2769867549668874
+hit_5: 0.5821192052980132
+hit_10: 0.7033112582781457
+hit_20: 0.7983443708609271
+ap: tensor([0.4192], device='cuda:0')
+########## best_metrics ##########
+ndcg_1: 0.2802980132450331
+ndcg_5: tensor([0.4410], device='cuda:0')
+ndcg_10: tensor([0.4808], device='cuda:0')
+ndcg_20: tensor([0.5040], device='cuda:0')
+hit_1: 0.2802980132450331
+hit_5: 0.5872516556291391
+hit_10: 0.7100993377483443
+hit_20: 0.803476821192053
+ap: tensor([0.4211], device='cuda:0')
+no increase in recent 2 iters
+#########################################################
+################## epoch 33 ###########################
+loss: 324.3423, len_train_loader:965
+modified_target in every batch:50.9668
+modified_hist in every batch :457.0031
+########## current_metrics ##########
+ndcg_1: 0.27913907284768213
+ndcg_5: tensor([0.4432], device='cuda:0')
+ndcg_10: tensor([0.4802], device='cuda:0')
+ndcg_20: tensor([0.5042], device='cuda:0')
+hit_1: 0.27913907284768213
+hit_5: 0.5910596026490066
+hit_10: 0.7044701986754967
+hit_20: 0.7985099337748345
+ap: tensor([0.4215], device='cuda:0')
+########## best_metrics ##########
+ndcg_1: 0.2802980132450331
+ndcg_5: tensor([0.4432], device='cuda:0')
+ndcg_10: tensor([0.4808], device='cuda:0')
+ndcg_20: tensor([0.5042], device='cuda:0')
+hit_1: 0.2802980132450331
+hit_5: 0.5910596026490066
+hit_10: 0.7100993377483443
+hit_20: 0.803476821192053
+ap: tensor([0.4215], device='cuda:0')
+no increase in recent 0 iters
+#########################################################
+################## epoch 34 ###########################
+loss: 323.5365, len_train_loader:965
+modified_target in every batch:50.9668
+modified_hist in every batch :456.7005
+########## current_metrics ##########
+ndcg_1: 0.2774834437086093
+ndcg_5: tensor([0.4427], device='cuda:0')
+ndcg_10: tensor([0.4796], device='cuda:0')
+ndcg_20: tensor([0.5032], device='cuda:0')
+hit_1: 0.2774834437086093
+hit_5: 0.5923841059602649
+hit_10: 0.7062913907284768
+hit_20: 0.7988410596026491
+ap: tensor([0.4201], device='cuda:0')
+########## best_metrics ##########
+ndcg_1: 0.2802980132450331
+ndcg_5: tensor([0.4432], device='cuda:0')
+ndcg_10: tensor([0.4808], device='cuda:0')
+ndcg_20: tensor([0.5042], device='cuda:0')
+hit_1: 0.2802980132450331
+hit_5: 0.5923841059602649
+hit_10: 0.7100993377483443
+hit_20: 0.803476821192053
+ap: tensor([0.4215], device='cuda:0')
+no increase in recent 0 iters
+#########################################################
+################## epoch 35 ###########################
+loss: 323.9875, len_train_loader:965
+modified_target in every batch:50.9668
+modified_hist in every batch :456.1067
+########## current_metrics ##########
+ndcg_1: 0.2783112582781457
+ndcg_5: tensor([0.4410], device='cuda:0')
+ndcg_10: tensor([0.4801], device='cuda:0')
+ndcg_20: tensor([0.5033], device='cuda:0')
+hit_1: 0.2783112582781457
+hit_5: 0.5869205298013245
+hit_10: 0.7071192052980132
+hit_20: 0.7975165562913907
+ap: tensor([0.4206], device='cuda:0')
+########## best_metrics ##########
+ndcg_1: 0.2802980132450331
+ndcg_5: tensor([0.4432], device='cuda:0')
+ndcg_10: tensor([0.4808], device='cuda:0')
+ndcg_20: tensor([0.5042], device='cuda:0')
+hit_1: 0.2802980132450331
+hit_5: 0.5923841059602649
+hit_10: 0.7100993377483443
+hit_20: 0.803476821192053
+ap: tensor([0.4215], device='cuda:0')
+no increase in recent 1 iters
+#########################################################
+################## epoch 36 ###########################
+loss: 321.5523, len_train_loader:965
+modified_target in every batch:50.9668
+modified_hist in every batch :455.9451
+########## current_metrics ##########
+ndcg_1: 0.28294701986754967
+ndcg_5: tensor([0.4412], device='cuda:0')
+ndcg_10: tensor([0.4806], device='cuda:0')
+ndcg_20: tensor([0.5038], device='cuda:0')
+hit_1: 0.28294701986754967
+hit_5: 0.5836092715231788
+hit_10: 0.7051324503311258
+hit_20: 0.7958609271523179
+ap: tensor([0.4220], device='cuda:0')
+########## best_metrics ##########
+ndcg_1: 0.28294701986754967
+ndcg_5: tensor([0.4432], device='cuda:0')
+ndcg_10: tensor([0.4808], device='cuda:0')
+ndcg_20: tensor([0.5042], device='cuda:0')
+hit_1: 0.28294701986754967
+hit_5: 0.5923841059602649
+hit_10: 0.7100993377483443
+hit_20: 0.803476821192053
+ap: tensor([0.4220], device='cuda:0')
+no increase in recent 0 iters
+#########################################################
+################## epoch 37 ###########################
+loss: 321.2834, len_train_loader:965
+modified_target in every batch:50.9668
+modified_hist in every batch :456.4
+########## current_metrics ##########
+ndcg_1: 0.2802980132450331
+ndcg_5: tensor([0.4407], device='cuda:0')
+ndcg_10: tensor([0.4795], device='cuda:0')
+ndcg_20: tensor([0.5035], device='cuda:0')
+hit_1: 0.2802980132450331
+hit_5: 0.5841059602649007
+hit_10: 0.7029801324503311
+hit_20: 0.7971854304635762
+ap: tensor([0.4212], device='cuda:0')
+########## best_metrics ##########
+ndcg_1: 0.28294701986754967
+ndcg_5: tensor([0.4432], device='cuda:0')
+ndcg_10: tensor([0.4808], device='cuda:0')
+ndcg_20: tensor([0.5042], device='cuda:0')
+hit_1: 0.28294701986754967
+hit_5: 0.5923841059602649
+hit_10: 0.7100993377483443
+hit_20: 0.803476821192053
+ap: tensor([0.4220], device='cuda:0')
+no increase in recent 1 iters
+#########################################################
+################## epoch 38 ###########################
+loss: 321.5448, len_train_loader:965
+modified_target in every batch:50.9668
+modified_hist in every batch :456.3886
+########## current_metrics ##########
+ndcg_1: 0.2826158940397351
+ndcg_5: tensor([0.4417], device='cuda:0')
+ndcg_10: tensor([0.4814], device='cuda:0')
+ndcg_20: tensor([0.5053], device='cuda:0')
+hit_1: 0.2826158940397351
+hit_5: 0.5844370860927153
+hit_10: 0.7061258278145696
+hit_20: 0.8
+ap: tensor([0.4227], device='cuda:0')
+########## best_metrics ##########
+ndcg_1: 0.28294701986754967
+ndcg_5: tensor([0.4432], device='cuda:0')
+ndcg_10: tensor([0.4814], device='cuda:0')
+ndcg_20: tensor([0.5053], device='cuda:0')
+hit_1: 0.28294701986754967
+hit_5: 0.5923841059602649
+hit_10: 0.7100993377483443
+hit_20: 0.803476821192053
+ap: tensor([0.4227], device='cuda:0')
+no increase in recent 0 iters
+#########################################################
+################## epoch 39 ###########################
+loss: 320.6126, len_train_loader:965
+modified_target in every batch:50.9668
+modified_hist in every batch :457.3409
+########## current_metrics ##########
+ndcg_1: 0.28228476821192056
+ndcg_5: tensor([0.4427], device='cuda:0')
+ndcg_10: tensor([0.4818], device='cuda:0')
+ndcg_20: tensor([0.5053], device='cuda:0')
+hit_1: 0.28228476821192056
+hit_5: 0.5879139072847682
+hit_10: 0.708112582781457
+hit_20: 0.8009933774834437
+ap: tensor([0.4224], device='cuda:0')
+########## best_metrics ##########
+ndcg_1: 0.28294701986754967
+ndcg_5: tensor([0.4432], device='cuda:0')
+ndcg_10: tensor([0.4818], device='cuda:0')
+ndcg_20: tensor([0.5053], device='cuda:0')
+hit_1: 0.28294701986754967
+hit_5: 0.5923841059602649
+hit_10: 0.7100993377483443
+hit_20: 0.803476821192053
+ap: tensor([0.4227], device='cuda:0')
+no increase in recent 0 iters
+#########################################################
+################## epoch 40 ###########################
+loss: 320.7995, len_train_loader:965
+modified_target in every batch:50.9668
+modified_hist in every batch :455.7389
+########## current_metrics ##########
+ndcg_1: 0.27533112582781455
+ndcg_5: tensor([0.4396], device='cuda:0')
+ndcg_10: tensor([0.4789], device='cuda:0')
+ndcg_20: tensor([0.5031], device='cuda:0')
+hit_1: 0.27533112582781455
+hit_5: 0.5859271523178808
+hit_10: 0.706953642384106
+hit_20: 0.8021523178807947
+ap: tensor([0.4190], device='cuda:0')
+########## best_metrics ##########
+ndcg_1: 0.28294701986754967
+ndcg_5: tensor([0.4432], device='cuda:0')
+ndcg_10: tensor([0.4818], device='cuda:0')
+ndcg_20: tensor([0.5053], device='cuda:0')
+hit_1: 0.28294701986754967
+hit_5: 0.5923841059602649
+hit_10: 0.7100993377483443
+hit_20: 0.803476821192053
+ap: tensor([0.4227], device='cuda:0')
+no increase in recent 1 iters
+#########################################################
+################## epoch 41 ###########################
+loss: 320.0184, len_train_loader:965
+modified_target in every batch:50.9668
+modified_hist in every batch :456.9409
+########## current_metrics ##########
+ndcg_1: 0.2771523178807947
+ndcg_5: tensor([0.4397], device='cuda:0')
+ndcg_10: tensor([0.4782], device='cuda:0')
+ndcg_20: tensor([0.5024], device='cuda:0')
+hit_1: 0.2771523178807947
+hit_5: 0.5872516556291391
+hit_10: 0.7051324503311258
+hit_20: 0.8004966887417219
+ap: tensor([0.4187], device='cuda:0')
+########## best_metrics ##########
+ndcg_1: 0.28294701986754967
+ndcg_5: tensor([0.4432], device='cuda:0')
+ndcg_10: tensor([0.4818], device='cuda:0')
+ndcg_20: tensor([0.5053], device='cuda:0')
+hit_1: 0.28294701986754967
+hit_5: 0.5923841059602649
+hit_10: 0.7100993377483443
+hit_20: 0.803476821192053
+ap: tensor([0.4227], device='cuda:0')
+no increase in recent 2 iters
+#########################################################
+################## epoch 42 ###########################
+loss: 320.3028, len_train_loader:965
+modified_target in every batch:50.9668
+modified_hist in every batch :456.0549
+########## current_metrics ##########
+ndcg_1: 0.2816225165562914
+ndcg_5: tensor([0.4430], device='cuda:0')
+ndcg_10: tensor([0.4814], device='cuda:0')
+ndcg_20: tensor([0.5052], device='cuda:0')
+hit_1: 0.2816225165562914
+hit_5: 0.5885761589403974
+hit_10: 0.7062913907284768
+hit_20: 0.8003311258278145
+ap: tensor([0.4224], device='cuda:0')
+########## best_metrics ##########
+ndcg_1: 0.28294701986754967
+ndcg_5: tensor([0.4432], device='cuda:0')
+ndcg_10: tensor([0.4818], device='cuda:0')
+ndcg_20: tensor([0.5053], device='cuda:0')
+hit_1: 0.28294701986754967
+hit_5: 0.5923841059602649
+hit_10: 0.7100993377483443
+hit_20: 0.803476821192053
+ap: tensor([0.4227], device='cuda:0')
+no increase in recent 3 iters
+#########################################################
+################## epoch 43 ###########################
+loss: 319.999, len_train_loader:965
+modified_target in every batch:50.9668
+modified_hist in every batch :456.4124
+########## current_metrics ##########
+ndcg_1: 0.2860927152317881
+ndcg_5: tensor([0.4442], device='cuda:0')
+ndcg_10: tensor([0.4843], device='cuda:0')
+ndcg_20: tensor([0.5076], device='cuda:0')
+hit_1: 0.2860927152317881
+hit_5: 0.5862582781456953
+hit_10: 0.7094370860927153
+hit_20: 0.8014900662251656
+ap: tensor([0.4252], device='cuda:0')
+########## best_metrics ##########
+ndcg_1: 0.2860927152317881
+ndcg_5: tensor([0.4442], device='cuda:0')
+ndcg_10: tensor([0.4843], device='cuda:0')
+ndcg_20: tensor([0.5076], device='cuda:0')
+hit_1: 0.2860927152317881
+hit_5: 0.5923841059602649
+hit_10: 0.7100993377483443
+hit_20: 0.803476821192053
+ap: tensor([0.4252], device='cuda:0')
+no increase in recent 0 iters
+#########################################################
+################## epoch 44 ###########################
+loss: 319.6133, len_train_loader:965
+modified_target in every batch:50.9668
+modified_hist in every batch :455.6176
+########## current_metrics ##########
+ndcg_1: 0.2850993377483444
+ndcg_5: tensor([0.4448], device='cuda:0')
+ndcg_10: tensor([0.4834], device='cuda:0')
+ndcg_20: tensor([0.5067], device='cuda:0')
+hit_1: 0.2850993377483444
+hit_5: 0.5890728476821192
+hit_10: 0.7072847682119205
+hit_20: 0.7995033112582781
+ap: tensor([0.4246], device='cuda:0')
+########## best_metrics ##########
+ndcg_1: 0.2860927152317881
+ndcg_5: tensor([0.4448], device='cuda:0')
+ndcg_10: tensor([0.4843], device='cuda:0')
+ndcg_20: tensor([0.5076], device='cuda:0')
+hit_1: 0.2860927152317881
+hit_5: 0.5923841059602649
+hit_10: 0.7100993377483443
+hit_20: 0.803476821192053
+ap: tensor([0.4252], device='cuda:0')
+no increase in recent 0 iters
+#########################################################
+################## epoch 45 ###########################
+loss: 319.594, len_train_loader:965
+modified_target in every batch:50.9668
+modified_hist in every batch :455.5275
+########## current_metrics ##########
+ndcg_1: 0.28658940397350996
+ndcg_5: tensor([0.4436], device='cuda:0')
+ndcg_10: tensor([0.4834], device='cuda:0')
+ndcg_20: tensor([0.5060], device='cuda:0')
+hit_1: 0.28658940397350996
+hit_5: 0.5857615894039735
+hit_10: 0.7076158940397351
+hit_20: 0.7968543046357616
+ap: tensor([0.4246], device='cuda:0')
+########## best_metrics ##########
+ndcg_1: 0.28658940397350996
+ndcg_5: tensor([0.4448], device='cuda:0')
+ndcg_10: tensor([0.4843], device='cuda:0')
+ndcg_20: tensor([0.5076], device='cuda:0')
+hit_1: 0.28658940397350996
+hit_5: 0.5923841059602649
+hit_10: 0.7100993377483443
+hit_20: 0.803476821192053
+ap: tensor([0.4252], device='cuda:0')
+no increase in recent 0 iters
+#########################################################
+################## epoch 46 ###########################
+loss: 319.4914, len_train_loader:965
+modified_target in every batch:50.9668
+modified_hist in every batch :456.8238
+########## current_metrics ##########
+ndcg_1: 0.28410596026490065
+ndcg_5: tensor([0.4441], device='cuda:0')
+ndcg_10: tensor([0.4834], device='cuda:0')
+ndcg_20: tensor([0.5063], device='cuda:0')
+hit_1: 0.28410596026490065
+hit_5: 0.58841059602649
+hit_10: 0.7092715231788079
+hit_20: 0.7993377483443709
+ap: tensor([0.4240], device='cuda:0')
+########## best_metrics ##########
+ndcg_1: 0.28658940397350996
+ndcg_5: tensor([0.4448], device='cuda:0')
+ndcg_10: tensor([0.4843], device='cuda:0')
+ndcg_20: tensor([0.5076], device='cuda:0')
+hit_1: 0.28658940397350996
+hit_5: 0.5923841059602649
+hit_10: 0.7100993377483443
+hit_20: 0.803476821192053
+ap: tensor([0.4252], device='cuda:0')
+no increase in recent 1 iters
+#########################################################
+################## epoch 47 ###########################
+loss: 319.4297, len_train_loader:965
+modified_target in every batch:50.9668
+modified_hist in every batch :456.685
+########## current_metrics ##########
+ndcg_1: 0.28443708609271523
+ndcg_5: tensor([0.4429], device='cuda:0')
+ndcg_10: tensor([0.4823], device='cuda:0')
+ndcg_20: tensor([0.5048], device='cuda:0')
+hit_1: 0.28443708609271523
+hit_5: 0.5869205298013245
+hit_10: 0.7077814569536424
+hit_20: 0.7966887417218543
+ap: tensor([0.4231], device='cuda:0')
+########## best_metrics ##########
+ndcg_1: 0.28658940397350996
+ndcg_5: tensor([0.4448], device='cuda:0')
+ndcg_10: tensor([0.4843], device='cuda:0')
+ndcg_20: tensor([0.5076], device='cuda:0')
+hit_1: 0.28658940397350996
+hit_5: 0.5923841059602649
+hit_10: 0.7100993377483443
+hit_20: 0.803476821192053
+ap: tensor([0.4252], device='cuda:0')
+no increase in recent 2 iters
+#########################################################
+################## epoch 48 ###########################
+loss: 318.5733, len_train_loader:965
+modified_target in every batch:50.9668
+modified_hist in every batch :456.5399
+########## current_metrics ##########
+ndcg_1: 0.2824503311258278
+ndcg_5: tensor([0.4454], device='cuda:0')
+ndcg_10: tensor([0.4827], device='cuda:0')
+ndcg_20: tensor([0.5064], device='cuda:0')
+hit_1: 0.2824503311258278
+hit_5: 0.5922185430463576
+hit_10: 0.7067880794701987
+hit_20: 0.8
+ap: tensor([0.4239], device='cuda:0')
+########## best_metrics ##########
+ndcg_1: 0.28658940397350996
+ndcg_5: tensor([0.4454], device='cuda:0')
+ndcg_10: tensor([0.4843], device='cuda:0')
+ndcg_20: tensor([0.5076], device='cuda:0')
+hit_1: 0.28658940397350996
+hit_5: 0.5923841059602649
+hit_10: 0.7100993377483443
+hit_20: 0.803476821192053
+ap: tensor([0.4252], device='cuda:0')
+no increase in recent 0 iters
+#########################################################
+################## epoch 49 ###########################
+loss: 318.7891, len_train_loader:965
+modified_target in every batch:50.9668
+modified_hist in every batch :456.456
+########## current_metrics ##########
+ndcg_1: 0.2809602649006622
+ndcg_5: tensor([0.4435], device='cuda:0')
+ndcg_10: tensor([0.4825], device='cuda:0')
+ndcg_20: tensor([0.5064], device='cuda:0')
+hit_1: 0.2809602649006622
+hit_5: 0.58841059602649
+hit_10: 0.7077814569536424
+hit_20: 0.8019867549668874
+ap: tensor([0.4233], device='cuda:0')
+########## best_metrics ##########
+ndcg_1: 0.28658940397350996
+ndcg_5: tensor([0.4454], device='cuda:0')
+ndcg_10: tensor([0.4843], device='cuda:0')
+ndcg_20: tensor([0.5076], device='cuda:0')
+hit_1: 0.28658940397350996
+hit_5: 0.5923841059602649
+hit_10: 0.7100993377483443
+hit_20: 0.803476821192053
+ap: tensor([0.4252], device='cuda:0')
+no increase in recent 1 iters
+#########################################################
+################## epoch 50 ###########################
+loss: 319.1827, len_train_loader:965
+modified_target in every batch:50.9668
+modified_hist in every batch :455.2508
+########## current_metrics ##########
+ndcg_1: 0.28211920529801326
+ndcg_5: tensor([0.4432], device='cuda:0')
+ndcg_10: tensor([0.4816], device='cuda:0')
+ndcg_20: tensor([0.5057], device='cuda:0')
+hit_1: 0.28211920529801326
+hit_5: 0.58841059602649
+hit_10: 0.7061258278145696
+hit_20: 0.8016556291390728
+ap: tensor([0.4228], device='cuda:0')
+########## best_metrics ##########
+ndcg_1: 0.28658940397350996
+ndcg_5: tensor([0.4454], device='cuda:0')
+ndcg_10: tensor([0.4843], device='cuda:0')
+ndcg_20: tensor([0.5076], device='cuda:0')
+hit_1: 0.28658940397350996
+hit_5: 0.5923841059602649
+hit_10: 0.7100993377483443
+hit_20: 0.803476821192053
+ap: tensor([0.4252], device='cuda:0')
+no increase in recent 2 iters
+#########################################################
+################## epoch 51 ###########################
+loss: 319.0586, len_train_loader:965
+modified_target in every batch:50.9668
+modified_hist in every batch :456.1731
+########## current_metrics ##########
+ndcg_1: 0.28327814569536425
+ndcg_5: tensor([0.4436], device='cuda:0')
+ndcg_10: tensor([0.4830], device='cuda:0')
+ndcg_20: tensor([0.5060], device='cuda:0')
+hit_1: 0.28327814569536425
+hit_5: 0.5859271523178808
+hit_10: 0.7074503311258278
+hit_20: 0.7981788079470199
+ap: tensor([0.4242], device='cuda:0')
+########## best_metrics ##########
+ndcg_1: 0.28658940397350996
+ndcg_5: tensor([0.4454], device='cuda:0')
+ndcg_10: tensor([0.4843], device='cuda:0')
+ndcg_20: tensor([0.5076], device='cuda:0')
+hit_1: 0.28658940397350996
+hit_5: 0.5923841059602649
+hit_10: 0.7100993377483443
+hit_20: 0.803476821192053
+ap: tensor([0.4252], device='cuda:0')
+no increase in recent 3 iters
+#########################################################
+################## epoch 52 ###########################
+loss: 318.899, len_train_loader:965
+modified_target in every batch:50.9668
+modified_hist in every batch :456.5751
+########## current_metrics ##########
+ndcg_1: 0.2814569536423841
+ndcg_5: tensor([0.4420], device='cuda:0')
+ndcg_10: tensor([0.4813], device='cuda:0')
+ndcg_20: tensor([0.5045], device='cuda:0')
+hit_1: 0.2814569536423841
+hit_5: 0.5872516556291391
+hit_10: 0.7082781456953643
+hit_20: 0.7993377483443709
+ap: tensor([0.4217], device='cuda:0')
+########## best_metrics ##########
+ndcg_1: 0.28658940397350996
+ndcg_5: tensor([0.4454], device='cuda:0')
+ndcg_10: tensor([0.4843], device='cuda:0')
+ndcg_20: tensor([0.5076], device='cuda:0')
+hit_1: 0.28658940397350996
+hit_5: 0.5923841059602649
+hit_10: 0.7100993377483443
+hit_20: 0.803476821192053
+ap: tensor([0.4252], device='cuda:0')
+no increase in recent 4 iters
+#########################################################
+################## epoch 53 ###########################
+loss: 318.3731, len_train_loader:965
+modified_target in every batch:50.9668
+modified_hist in every batch :456.1461
+########## current_metrics ##########
+ndcg_1: 0.27980132450331124
+ndcg_5: tensor([0.4423], device='cuda:0')
+ndcg_10: tensor([0.4809], device='cuda:0')
+ndcg_20: tensor([0.5051], device='cuda:0')
+hit_1: 0.27980132450331124
+hit_5: 0.5872516556291391
+hit_10: 0.7059602649006622
+hit_20: 0.8013245033112583
+ap: tensor([0.4220], device='cuda:0')
+########## best_metrics ##########
+ndcg_1: 0.28658940397350996
+ndcg_5: tensor([0.4454], device='cuda:0')
+ndcg_10: tensor([0.4843], device='cuda:0')
+ndcg_20: tensor([0.5076], device='cuda:0')
+hit_1: 0.28658940397350996
+hit_5: 0.5923841059602649
+hit_10: 0.7100993377483443
+hit_20: 0.803476821192053
+ap: tensor([0.4252], device='cuda:0')
+no increase in recent 5 iters
+#########################################################
+################## epoch 54 ###########################
+loss: 318.0913, len_train_loader:965
+modified_target in every batch:50.9668
+modified_hist in every batch :456.7223
+########## current_metrics ##########
+ndcg_1: 0.2824503311258278
+ndcg_5: tensor([0.4442], device='cuda:0')
+ndcg_10: tensor([0.4831], device='cuda:0')
+ndcg_20: tensor([0.5062], device='cuda:0')
+hit_1: 0.2824503311258278
+hit_5: 0.5913907284768212
+hit_10: 0.7107615894039735
+hit_20: 0.8014900662251656
+ap: tensor([0.4232], device='cuda:0')
+########## best_metrics ##########
+ndcg_1: 0.28658940397350996
+ndcg_5: tensor([0.4454], device='cuda:0')
+ndcg_10: tensor([0.4843], device='cuda:0')
+ndcg_20: tensor([0.5076], device='cuda:0')
+hit_1: 0.28658940397350996
+hit_5: 0.5923841059602649
+hit_10: 0.7107615894039735
+hit_20: 0.803476821192053
+ap: tensor([0.4252], device='cuda:0')
+no increase in recent 0 iters
+#########################################################
+################## epoch 55 ###########################
+loss: 316.665, len_train_loader:965
+modified_target in every batch:50.9668
+modified_hist in every batch :456.7202
+########## current_metrics ##########
+ndcg_1: 0.2781456953642384
+ndcg_5: tensor([0.4435], device='cuda:0')
+ndcg_10: tensor([0.4815], device='cuda:0')
+ndcg_20: tensor([0.5050], device='cuda:0')
+hit_1: 0.2781456953642384
+hit_5: 0.5923841059602649
+hit_10: 0.7087748344370861
+hit_20: 0.801158940397351
+ap: tensor([0.4217], device='cuda:0')
+########## best_metrics ##########
+ndcg_1: 0.28658940397350996
+ndcg_5: tensor([0.4454], device='cuda:0')
+ndcg_10: tensor([0.4843], device='cuda:0')
+ndcg_20: tensor([0.5076], device='cuda:0')
+hit_1: 0.28658940397350996
+hit_5: 0.5923841059602649
+hit_10: 0.7107615894039735
+hit_20: 0.803476821192053
+ap: tensor([0.4252], device='cuda:0')
+no increase in recent 1 iters
+#########################################################
+################## epoch 56 ###########################
+loss: 316.5225, len_train_loader:965
+modified_target in every batch:50.9668
+modified_hist in every batch :456.7917
+########## current_metrics ##########
+ndcg_1: 0.27864238410596026
+ndcg_5: tensor([0.4434], device='cuda:0')
+ndcg_10: tensor([0.4810], device='cuda:0')
+ndcg_20: tensor([0.5048], device='cuda:0')
+hit_1: 0.27864238410596026
+hit_5: 0.5918874172185431
+hit_10: 0.7072847682119205
+hit_20: 0.801158940397351
+ap: tensor([0.4215], device='cuda:0')
+########## best_metrics ##########
+ndcg_1: 0.28658940397350996
+ndcg_5: tensor([0.4454], device='cuda:0')
+ndcg_10: tensor([0.4843], device='cuda:0')
+ndcg_20: tensor([0.5076], device='cuda:0')
+hit_1: 0.28658940397350996
+hit_5: 0.5923841059602649
+hit_10: 0.7107615894039735
+hit_20: 0.803476821192053
+ap: tensor([0.4252], device='cuda:0')
+no increase in recent 2 iters
+#########################################################
+################## epoch 57 ###########################
+loss: 315.7764, len_train_loader:965
+modified_target in every batch:50.9668
+modified_hist in every batch :455.6332
+########## current_metrics ##########
+ndcg_1: 0.28741721854304636
+ndcg_5: tensor([0.4459], device='cuda:0')
+ndcg_10: tensor([0.4845], device='cuda:0')
+ndcg_20: tensor([0.5077], device='cuda:0')
+hit_1: 0.28741721854304636
+hit_5: 0.5903973509933775
+hit_10: 0.7092715231788079
+hit_20: 0.8003311258278145
+ap: tensor([0.4257], device='cuda:0')
+########## best_metrics ##########
+ndcg_1: 0.28741721854304636
+ndcg_5: tensor([0.4459], device='cuda:0')
+ndcg_10: tensor([0.4845], device='cuda:0')
+ndcg_20: tensor([0.5077], device='cuda:0')
+hit_1: 0.28741721854304636
+hit_5: 0.5923841059602649
+hit_10: 0.7107615894039735
+hit_20: 0.803476821192053
+ap: tensor([0.4257], device='cuda:0')
+no increase in recent 0 iters
+#########################################################
+################## epoch 58 ###########################
+loss: 315.8519, len_train_loader:965
+modified_target in every batch:50.9668
+modified_hist in every batch :455.9295
+########## current_metrics ##########
+ndcg_1: 0.2816225165562914
+ndcg_5: tensor([0.4454], device='cuda:0')
+ndcg_10: tensor([0.4834], device='cuda:0')
+ndcg_20: tensor([0.5070], device='cuda:0')
+hit_1: 0.2816225165562914
+hit_5: 0.5915562913907285
+hit_10: 0.7082781456953643
+hit_20: 0.8014900662251656
+ap: tensor([0.4242], device='cuda:0')
+########## best_metrics ##########
+ndcg_1: 0.28741721854304636
+ndcg_5: tensor([0.4459], device='cuda:0')
+ndcg_10: tensor([0.4845], device='cuda:0')
+ndcg_20: tensor([0.5077], device='cuda:0')
+hit_1: 0.28741721854304636
+hit_5: 0.5923841059602649
+hit_10: 0.7107615894039735
+hit_20: 0.803476821192053
+ap: tensor([0.4257], device='cuda:0')
+no increase in recent 1 iters
+#########################################################
+################## epoch 59 ###########################
+loss: 316.22, len_train_loader:965
+modified_target in every batch:50.9668
+modified_hist in every batch :456.5171
+########## current_metrics ##########
+ndcg_1: 0.27764900662251657
+ndcg_5: tensor([0.4438], device='cuda:0')
+ndcg_10: tensor([0.4805], device='cuda:0')
+ndcg_20: tensor([0.5049], device='cuda:0')
+hit_1: 0.27764900662251657
+hit_5: 0.5913907284768212
+hit_10: 0.7036423841059603
+hit_20: 0.7998344370860927
+ap: tensor([0.4220], device='cuda:0')
+########## best_metrics ##########
+ndcg_1: 0.28741721854304636
+ndcg_5: tensor([0.4459], device='cuda:0')
+ndcg_10: tensor([0.4845], device='cuda:0')
+ndcg_20: tensor([0.5077], device='cuda:0')
+hit_1: 0.28741721854304636
+hit_5: 0.5923841059602649
+hit_10: 0.7107615894039735
+hit_20: 0.803476821192053
+ap: tensor([0.4257], device='cuda:0')
+no increase in recent 2 iters
+#########################################################
+################## epoch 60 ###########################
+loss: 315.7917, len_train_loader:965
+modified_target in every batch:50.9668
+modified_hist in every batch :456.6684
+########## current_metrics ##########
+ndcg_1: 0.2849337748344371
+ndcg_5: tensor([0.4448], device='cuda:0')
+ndcg_10: tensor([0.4837], device='cuda:0')
+ndcg_20: tensor([0.5071], device='cuda:0')
+hit_1: 0.2849337748344371
+hit_5: 0.5875827814569536
+hit_10: 0.706953642384106
+hit_20: 0.7988410596026491
+ap: tensor([0.4252], device='cuda:0')
+########## best_metrics ##########
+ndcg_1: 0.28741721854304636
+ndcg_5: tensor([0.4459], device='cuda:0')
+ndcg_10: tensor([0.4845], device='cuda:0')
+ndcg_20: tensor([0.5077], device='cuda:0')
+hit_1: 0.28741721854304636
+hit_5: 0.5923841059602649
+hit_10: 0.7107615894039735
+hit_20: 0.803476821192053
+ap: tensor([0.4257], device='cuda:0')
+no increase in recent 3 iters
+#########################################################
+################## epoch 61 ###########################
+loss: 315.5925, len_train_loader:965
+modified_target in every batch:50.9668
+modified_hist in every batch :457.3047
+########## current_metrics ##########
+ndcg_1: 0.28807947019867547
+ndcg_5: tensor([0.4471], device='cuda:0')
+ndcg_10: tensor([0.4851], device='cuda:0')
+ndcg_20: tensor([0.5082], device='cuda:0')
+hit_1: 0.28807947019867547
+hit_5: 0.5913907284768212
+hit_10: 0.708112582781457
+hit_20: 0.7990066225165563
+ap: tensor([0.4268], device='cuda:0')
+########## best_metrics ##########
+ndcg_1: 0.28807947019867547
+ndcg_5: tensor([0.4471], device='cuda:0')
+ndcg_10: tensor([0.4851], device='cuda:0')
+ndcg_20: tensor([0.5082], device='cuda:0')
+hit_1: 0.28807947019867547
+hit_5: 0.5923841059602649
+hit_10: 0.7107615894039735
+hit_20: 0.803476821192053
+ap: tensor([0.4268], device='cuda:0')
+no increase in recent 0 iters
+#########################################################
+################## epoch 62 ###########################
+loss: 315.765, len_train_loader:965
+modified_target in every batch:50.9668
+modified_hist in every batch :457.0902
+########## current_metrics ##########
+ndcg_1: 0.2855960264900662
+ndcg_5: tensor([0.4470], device='cuda:0')
+ndcg_10: tensor([0.4841], device='cuda:0')
+ndcg_20: tensor([0.5083], device='cuda:0')
+hit_1: 0.2855960264900662
+hit_5: 0.5918874172185431
+hit_10: 0.705794701986755
+hit_20: 0.8006622516556291
+ap: tensor([0.4262], device='cuda:0')
+########## best_metrics ##########
+ndcg_1: 0.28807947019867547
+ndcg_5: tensor([0.4471], device='cuda:0')
+ndcg_10: tensor([0.4851], device='cuda:0')
+ndcg_20: tensor([0.5083], device='cuda:0')
+hit_1: 0.28807947019867547
+hit_5: 0.5923841059602649
+hit_10: 0.7107615894039735
+hit_20: 0.803476821192053
+ap: tensor([0.4268], device='cuda:0')
+no increase in recent 0 iters
+#########################################################
+################## epoch 63 ###########################
+loss: 315.3436, len_train_loader:965
+modified_target in every batch:50.9668
+modified_hist in every batch :456.4249
+########## current_metrics ##########
+ndcg_1: 0.28344370860927154
+ndcg_5: tensor([0.4447], device='cuda:0')
+ndcg_10: tensor([0.4838], device='cuda:0')
+ndcg_20: tensor([0.5072], device='cuda:0')
+hit_1: 0.28344370860927154
+hit_5: 0.5902317880794702
+hit_10: 0.7099337748344371
+hit_20: 0.8028145695364238
+ap: tensor([0.4242], device='cuda:0')
+########## best_metrics ##########
+ndcg_1: 0.28807947019867547
+ndcg_5: tensor([0.4471], device='cuda:0')
+ndcg_10: tensor([0.4851], device='cuda:0')
+ndcg_20: tensor([0.5083], device='cuda:0')
+hit_1: 0.28807947019867547
+hit_5: 0.5923841059602649
+hit_10: 0.7107615894039735
+hit_20: 0.803476821192053
+ap: tensor([0.4268], device='cuda:0')
+no increase in recent 1 iters
+#########################################################
+################## epoch 64 ###########################
+loss: 315.5187, len_train_loader:965
+modified_target in every batch:50.9668
+modified_hist in every batch :456.2363
+########## current_metrics ##########
+ndcg_1: 0.28394039735099336
+ndcg_5: tensor([0.4474], device='cuda:0')
+ndcg_10: tensor([0.4854], device='cuda:0')
+ndcg_20: tensor([0.5087], device='cuda:0')
+hit_1: 0.28394039735099336
+hit_5: 0.5940397350993377
+hit_10: 0.7107615894039735
+hit_20: 0.8024834437086092
+ap: tensor([0.4261], device='cuda:0')
+########## best_metrics ##########
+ndcg_1: 0.28807947019867547
+ndcg_5: tensor([0.4474], device='cuda:0')
+ndcg_10: tensor([0.4854], device='cuda:0')
+ndcg_20: tensor([0.5087], device='cuda:0')
+hit_1: 0.28807947019867547
+hit_5: 0.5940397350993377
+hit_10: 0.7107615894039735
+hit_20: 0.803476821192053
+ap: tensor([0.4268], device='cuda:0')
+no increase in recent 0 iters
+#########################################################
+################## epoch 65 ###########################
+loss: 315.244, len_train_loader:965
+modified_target in every batch:50.9668
+modified_hist in every batch :455.9979
+########## current_metrics ##########
+ndcg_1: 0.27847682119205297
+ndcg_5: tensor([0.4430], device='cuda:0')
+ndcg_10: tensor([0.4827], device='cuda:0')
+ndcg_20: tensor([0.5052], device='cuda:0')
+hit_1: 0.27847682119205297
+hit_5: 0.5894039735099338
+hit_10: 0.7115894039735099
+hit_20: 0.7998344370860927
+ap: tensor([0.4222], device='cuda:0')
+########## best_metrics ##########
+ndcg_1: 0.28807947019867547
+ndcg_5: tensor([0.4474], device='cuda:0')
+ndcg_10: tensor([0.4854], device='cuda:0')
+ndcg_20: tensor([0.5087], device='cuda:0')
+hit_1: 0.28807947019867547
+hit_5: 0.5940397350993377
+hit_10: 0.7115894039735099
+hit_20: 0.803476821192053
+ap: tensor([0.4268], device='cuda:0')
+no increase in recent 0 iters
+#########################################################
+################## epoch 66 ###########################
+loss: 314.9571, len_train_loader:965
+modified_target in every batch:50.9668
+modified_hist in every batch :456.6539
+########## current_metrics ##########
+ndcg_1: 0.2850993377483444
+ndcg_5: tensor([0.4471], device='cuda:0')
+ndcg_10: tensor([0.4850], device='cuda:0')
+ndcg_20: tensor([0.5077], device='cuda:0')
+hit_1: 0.2850993377483444
+hit_5: 0.5927152317880795
+hit_10: 0.7091059602649007
+hit_20: 0.7986754966887417
+ap: tensor([0.4261], device='cuda:0')
+########## best_metrics ##########
+ndcg_1: 0.28807947019867547
+ndcg_5: tensor([0.4474], device='cuda:0')
+ndcg_10: tensor([0.4854], device='cuda:0')
+ndcg_20: tensor([0.5087], device='cuda:0')
+hit_1: 0.28807947019867547
+hit_5: 0.5940397350993377
+hit_10: 0.7115894039735099
+hit_20: 0.803476821192053
+ap: tensor([0.4268], device='cuda:0')
+no increase in recent 1 iters
+#########################################################
+################## epoch 67 ###########################
+loss: 314.9554, len_train_loader:965
+modified_target in every batch:50.9668
+modified_hist in every batch :455.8342
+########## current_metrics ##########
+ndcg_1: 0.2811258278145695
+ndcg_5: tensor([0.4449], device='cuda:0')
+ndcg_10: tensor([0.4836], device='cuda:0')
+ndcg_20: tensor([0.5068], device='cuda:0')
+hit_1: 0.2811258278145695
+hit_5: 0.5913907284768212
+hit_10: 0.7097682119205299
+hit_20: 0.8016556291390728
+ap: tensor([0.4240], device='cuda:0')
+########## best_metrics ##########
+ndcg_1: 0.28807947019867547
+ndcg_5: tensor([0.4474], device='cuda:0')
+ndcg_10: tensor([0.4854], device='cuda:0')
+ndcg_20: tensor([0.5087], device='cuda:0')
+hit_1: 0.28807947019867547
+hit_5: 0.5940397350993377
+hit_10: 0.7115894039735099
+hit_20: 0.803476821192053
+ap: tensor([0.4268], device='cuda:0')
+no increase in recent 2 iters
+#########################################################
+################## epoch 68 ###########################
+loss: 315.1436, len_train_loader:965
+modified_target in every batch:50.9668
+modified_hist in every batch :456.8249
+########## current_metrics ##########
+ndcg_1: 0.28344370860927154
+ndcg_5: tensor([0.4472], device='cuda:0')
+ndcg_10: tensor([0.4854], device='cuda:0')
+ndcg_20: tensor([0.5076], device='cuda:0')
+hit_1: 0.28344370860927154
+hit_5: 0.5940397350993377
+hit_10: 0.7114238410596027
+hit_20: 0.7986754966887417
+ap: tensor([0.4258], device='cuda:0')
+########## best_metrics ##########
+ndcg_1: 0.28807947019867547
+ndcg_5: tensor([0.4474], device='cuda:0')
+ndcg_10: tensor([0.4854], device='cuda:0')
+ndcg_20: tensor([0.5087], device='cuda:0')
+hit_1: 0.28807947019867547
+hit_5: 0.5940397350993377
+hit_10: 0.7115894039735099
+hit_20: 0.803476821192053
+ap: tensor([0.4268], device='cuda:0')
+no increase in recent 0 iters
+#########################################################
+################## epoch 69 ###########################
+loss: 314.884, len_train_loader:965
+modified_target in every batch:50.9668
+modified_hist in every batch :456.2808
+########## current_metrics ##########
+ndcg_1: 0.2817880794701987
+ndcg_5: tensor([0.4452], device='cuda:0')
+ndcg_10: tensor([0.4824], device='cuda:0')
+ndcg_20: tensor([0.5053], device='cuda:0')
+hit_1: 0.2817880794701987
+hit_5: 0.5922185430463576
+hit_10: 0.7071192052980132
+hit_20: 0.7975165562913907
+ap: tensor([0.4233], device='cuda:0')
+########## best_metrics ##########
+ndcg_1: 0.28807947019867547
+ndcg_5: tensor([0.4474], device='cuda:0')
+ndcg_10: tensor([0.4854], device='cuda:0')
+ndcg_20: tensor([0.5087], device='cuda:0')
+hit_1: 0.28807947019867547
+hit_5: 0.5940397350993377
+hit_10: 0.7115894039735099
+hit_20: 0.803476821192053
+ap: tensor([0.4268], device='cuda:0')
+no increase in recent 1 iters
+#########################################################
+################## epoch 70 ###########################
+loss: 314.7967, len_train_loader:965
+modified_target in every batch:50.9668
+modified_hist in every batch :456.2456
+########## current_metrics ##########
+ndcg_1: 0.2774834437086093
+ndcg_5: tensor([0.4412], device='cuda:0')
+ndcg_10: tensor([0.4817], device='cuda:0')
+ndcg_20: tensor([0.5039], device='cuda:0')
+hit_1: 0.2774834437086093
+hit_5: 0.5864238410596027
+hit_10: 0.7110927152317881
+hit_20: 0.7988410596026491
+ap: tensor([0.4210], device='cuda:0')
+########## best_metrics ##########
+ndcg_1: 0.28807947019867547
+ndcg_5: tensor([0.4474], device='cuda:0')
+ndcg_10: tensor([0.4854], device='cuda:0')
+ndcg_20: tensor([0.5087], device='cuda:0')
+hit_1: 0.28807947019867547
+hit_5: 0.5940397350993377
+hit_10: 0.7115894039735099
+hit_20: 0.803476821192053
+ap: tensor([0.4268], device='cuda:0')
+no increase in recent 2 iters
+#########################################################
+################## epoch 71 ###########################
+loss: 314.6878, len_train_loader:965
+modified_target in every batch:50.9668
+modified_hist in every batch :457.3741
+########## current_metrics ##########
+ndcg_1: 0.28311258278145696
+ndcg_5: tensor([0.4456], device='cuda:0')
+ndcg_10: tensor([0.4850], device='cuda:0')
+ndcg_20: tensor([0.5071], device='cuda:0')
+hit_1: 0.28311258278145696
+hit_5: 0.5918874172185431
+hit_10: 0.7132450331125828
+hit_20: 0.8004966887417219
+ap: tensor([0.4246], device='cuda:0')
+########## best_metrics ##########
+ndcg_1: 0.28807947019867547
+ndcg_5: tensor([0.4474], device='cuda:0')
+ndcg_10: tensor([0.4854], device='cuda:0')
+ndcg_20: tensor([0.5087], device='cuda:0')
+hit_1: 0.28807947019867547
+hit_5: 0.5940397350993377
+hit_10: 0.7132450331125828
+hit_20: 0.803476821192053
+ap: tensor([0.4268], device='cuda:0')
+no increase in recent 0 iters
+#########################################################
+################## epoch 72 ###########################
+loss: 315.0237, len_train_loader:965
+modified_target in every batch:50.9668
+modified_hist in every batch :455.7347
+########## current_metrics ##########
+ndcg_1: 0.27963576158940395
+ndcg_5: tensor([0.4434], device='cuda:0')
+ndcg_10: tensor([0.4837], device='cuda:0')
+ndcg_20: tensor([0.5065], device='cuda:0')
+hit_1: 0.27963576158940395
+hit_5: 0.5887417218543046
+hit_10: 0.7122516556291391
+hit_20: 0.802317880794702
+ap: tensor([0.4233], device='cuda:0')
+########## best_metrics ##########
+ndcg_1: 0.28807947019867547
+ndcg_5: tensor([0.4474], device='cuda:0')
+ndcg_10: tensor([0.4854], device='cuda:0')
+ndcg_20: tensor([0.5087], device='cuda:0')
+hit_1: 0.28807947019867547
+hit_5: 0.5940397350993377
+hit_10: 0.7132450331125828
+hit_20: 0.803476821192053
+ap: tensor([0.4268], device='cuda:0')
+no increase in recent 1 iters
+#########################################################
+################## epoch 73 ###########################
+loss: 313.8462, len_train_loader:965
+modified_target in every batch:50.9668
+modified_hist in every batch :456.5751
+########## current_metrics ##########
+ndcg_1: 0.27947019867549666
+ndcg_5: tensor([0.4437], device='cuda:0')
+ndcg_10: tensor([0.4824], device='cuda:0')
+ndcg_20: tensor([0.5060], device='cuda:0')
+hit_1: 0.27947019867549666
+hit_5: 0.590728476821192
+hit_10: 0.7091059602649007
+hit_20: 0.8021523178807947
+ap: tensor([0.4227], device='cuda:0')
+########## best_metrics ##########
+ndcg_1: 0.28807947019867547
+ndcg_5: tensor([0.4474], device='cuda:0')
+ndcg_10: tensor([0.4854], device='cuda:0')
+ndcg_20: tensor([0.5087], device='cuda:0')
+hit_1: 0.28807947019867547
+hit_5: 0.5940397350993377
+hit_10: 0.7132450331125828
+hit_20: 0.803476821192053
+ap: tensor([0.4268], device='cuda:0')
+no increase in recent 2 iters
+#########################################################
+################## epoch 74 ###########################
+loss: 314.6515, len_train_loader:965
+modified_target in every batch:50.9668
+modified_hist in every batch :456.7233
+########## current_metrics ##########
+ndcg_1: 0.2759933774834437
+ndcg_5: tensor([0.4418], device='cuda:0')
+ndcg_10: tensor([0.4804], device='cuda:0')
+ndcg_20: tensor([0.5037], device='cuda:0')
+hit_1: 0.2759933774834437
+hit_5: 0.5912251655629139
+hit_10: 0.7092715231788079
+hit_20: 0.8009933774834437
+ap: tensor([0.4200], device='cuda:0')
+########## best_metrics ##########
+ndcg_1: 0.28807947019867547
+ndcg_5: tensor([0.4474], device='cuda:0')
+ndcg_10: tensor([0.4854], device='cuda:0')
+ndcg_20: tensor([0.5087], device='cuda:0')
+hit_1: 0.28807947019867547
+hit_5: 0.5940397350993377
+hit_10: 0.7132450331125828
+hit_20: 0.803476821192053
+ap: tensor([0.4268], device='cuda:0')
+no increase in recent 3 iters
+#########################################################
+################## epoch 75 ###########################
+loss: 314.5018, len_train_loader:965
+modified_target in every batch:50.9668
+modified_hist in every batch :456.3948
+########## current_metrics ##########
+ndcg_1: 0.2781456953642384
+ndcg_5: tensor([0.4423], device='cuda:0')
+ndcg_10: tensor([0.4813], device='cuda:0')
+ndcg_20: tensor([0.5036], device='cuda:0')
+hit_1: 0.2781456953642384
+hit_5: 0.5903973509933775
+hit_10: 0.7100993377483443
+hit_20: 0.7980132450331126
+ap: tensor([0.4208], device='cuda:0')
+########## best_metrics ##########
+ndcg_1: 0.28807947019867547
+ndcg_5: tensor([0.4474], device='cuda:0')
+ndcg_10: tensor([0.4854], device='cuda:0')
+ndcg_20: tensor([0.5087], device='cuda:0')
+hit_1: 0.28807947019867547
+hit_5: 0.5940397350993377
+hit_10: 0.7132450331125828
+hit_20: 0.803476821192053
+ap: tensor([0.4268], device='cuda:0')
+no increase in recent 4 iters
+#########################################################
+################## epoch 76 ###########################
+loss: 313.1897, len_train_loader:965
+modified_target in every batch:50.9668
+modified_hist in every batch :456.6
+########## current_metrics ##########
+ndcg_1: 0.2811258278145695
+ndcg_5: tensor([0.4423], device='cuda:0')
+ndcg_10: tensor([0.4825], device='cuda:0')
+ndcg_20: tensor([0.5056], device='cuda:0')
+hit_1: 0.2811258278145695
+hit_5: 0.5859271523178808
+hit_10: 0.7099337748344371
+hit_20: 0.8009933774834437
+ap: tensor([0.4227], device='cuda:0')
+########## best_metrics ##########
+ndcg_1: 0.28807947019867547
+ndcg_5: tensor([0.4474], device='cuda:0')
+ndcg_10: tensor([0.4854], device='cuda:0')
+ndcg_20: tensor([0.5087], device='cuda:0')
+hit_1: 0.28807947019867547
+hit_5: 0.5940397350993377
+hit_10: 0.7132450331125828
+hit_20: 0.803476821192053
+ap: tensor([0.4268], device='cuda:0')
+no increase in recent 5 iters
+#########################################################
+################## epoch 77 ###########################
+loss: 312.6326, len_train_loader:965
+modified_target in every batch:50.9668
+modified_hist in every batch :455.9813
+########## current_metrics ##########
+ndcg_1: 0.2802980132450331
+ndcg_5: tensor([0.4440], device='cuda:0')
+ndcg_10: tensor([0.4832], device='cuda:0')
+ndcg_20: tensor([0.5067], device='cuda:0')
+hit_1: 0.2802980132450331
+hit_5: 0.590066225165563
+hit_10: 0.7100993377483443
+hit_20: 0.8026490066225166
+ap: tensor([0.4234], device='cuda:0')
+########## best_metrics ##########
+ndcg_1: 0.28807947019867547
+ndcg_5: tensor([0.4474], device='cuda:0')
+ndcg_10: tensor([0.4854], device='cuda:0')
+ndcg_20: tensor([0.5087], device='cuda:0')
+hit_1: 0.28807947019867547
+hit_5: 0.5940397350993377
+hit_10: 0.7132450331125828
+hit_20: 0.803476821192053
+ap: tensor([0.4268], device='cuda:0')
+no increase in recent 6 iters
+#########################################################
+################## epoch 78 ###########################
+loss: 312.9666, len_train_loader:965
+modified_target in every batch:50.9668
+modified_hist in every batch :457.1389
+########## current_metrics ##########
+ndcg_1: 0.2846026490066225
+ndcg_5: tensor([0.4451], device='cuda:0')
+ndcg_10: tensor([0.4851], device='cuda:0')
+ndcg_20: tensor([0.5085], device='cuda:0')
+hit_1: 0.2846026490066225
+hit_5: 0.590066225165563
+hit_10: 0.7122516556291391
+hit_20: 0.8044701986754967
+ap: tensor([0.4253], device='cuda:0')
+########## best_metrics ##########
+ndcg_1: 0.28807947019867547
+ndcg_5: tensor([0.4474], device='cuda:0')
+ndcg_10: tensor([0.4854], device='cuda:0')
+ndcg_20: tensor([0.5087], device='cuda:0')
+hit_1: 0.28807947019867547
+hit_5: 0.5940397350993377
+hit_10: 0.7132450331125828
+hit_20: 0.8044701986754967
+ap: tensor([0.4268], device='cuda:0')
+no increase in recent 0 iters
+#########################################################
+################## epoch 79 ###########################
+loss: 312.9421, len_train_loader:965
+modified_target in every batch:50.9668
+modified_hist in every batch :456.0487
+########## current_metrics ##########
+ndcg_1: 0.28526490066225163
+ndcg_5: tensor([0.4441], device='cuda:0')
+ndcg_10: tensor([0.4839], device='cuda:0')
+ndcg_20: tensor([0.5067], device='cuda:0')
+hit_1: 0.28526490066225163
+hit_5: 0.5860927152317881
+hit_10: 0.7082781456953643
+hit_20: 0.7980132450331126
+ap: tensor([0.4250], device='cuda:0')
+########## best_metrics ##########
+ndcg_1: 0.28807947019867547
+ndcg_5: tensor([0.4474], device='cuda:0')
+ndcg_10: tensor([0.4854], device='cuda:0')
+ndcg_20: tensor([0.5087], device='cuda:0')
+hit_1: 0.28807947019867547
+hit_5: 0.5940397350993377
+hit_10: 0.7132450331125828
+hit_20: 0.8044701986754967
+ap: tensor([0.4268], device='cuda:0')
+no increase in recent 1 iters
+#########################################################
+################## epoch 80 ###########################
+loss: 312.3288, len_train_loader:965
+modified_target in every batch:50.9668
+modified_hist in every batch :455.9337
+########## current_metrics ##########
+ndcg_1: 0.27947019867549666
+ndcg_5: tensor([0.4415], device='cuda:0')
+ndcg_10: tensor([0.4817], device='cuda:0')
+ndcg_20: tensor([0.5043], device='cuda:0')
+hit_1: 0.27947019867549666
+hit_5: 0.5865894039735099
+hit_10: 0.7099337748344371
+hit_20: 0.7988410596026491
+ap: tensor([0.4215], device='cuda:0')
+########## best_metrics ##########
+ndcg_1: 0.28807947019867547
+ndcg_5: tensor([0.4474], device='cuda:0')
+ndcg_10: tensor([0.4854], device='cuda:0')
+ndcg_20: tensor([0.5087], device='cuda:0')
+hit_1: 0.28807947019867547
+hit_5: 0.5940397350993377
+hit_10: 0.7132450331125828
+hit_20: 0.8044701986754967
+ap: tensor([0.4268], device='cuda:0')
+no increase in recent 2 iters
+#########################################################
+################## epoch 81 ###########################
+loss: 311.8279, len_train_loader:965
+modified_target in every batch:50.9668
+modified_hist in every batch :455.9067
+########## current_metrics ##########
+ndcg_1: 0.28394039735099336
+ndcg_5: tensor([0.4441], device='cuda:0')
+ndcg_10: tensor([0.4840], device='cuda:0')
+ndcg_20: tensor([0.5065], device='cuda:0')
+hit_1: 0.28394039735099336
+hit_5: 0.5877483443708609
+hit_10: 0.7094370860927153
+hit_20: 0.7980132450331126
+ap: tensor([0.4247], device='cuda:0')
+########## best_metrics ##########
+ndcg_1: 0.28807947019867547
+ndcg_5: tensor([0.4474], device='cuda:0')
+ndcg_10: tensor([0.4854], device='cuda:0')
+ndcg_20: tensor([0.5087], device='cuda:0')
+hit_1: 0.28807947019867547
+hit_5: 0.5940397350993377
+hit_10: 0.7132450331125828
+hit_20: 0.8044701986754967
+ap: tensor([0.4268], device='cuda:0')
+no increase in recent 3 iters
+#########################################################
+################## epoch 82 ###########################
+loss: 312.1346, len_train_loader:965
+modified_target in every batch:50.9668
+modified_hist in every batch :456.6041
+########## current_metrics ##########
+ndcg_1: 0.28427152317880794
+ndcg_5: tensor([0.4455], device='cuda:0')
+ndcg_10: tensor([0.4843], device='cuda:0')
+ndcg_20: tensor([0.5071], device='cuda:0')
+hit_1: 0.28427152317880794
+hit_5: 0.5902317880794702
+hit_10: 0.7092715231788079
+hit_20: 0.7988410596026491
+ap: tensor([0.4252], device='cuda:0')
+########## best_metrics ##########
+ndcg_1: 0.28807947019867547
+ndcg_5: tensor([0.4474], device='cuda:0')
+ndcg_10: tensor([0.4854], device='cuda:0')
+ndcg_20: tensor([0.5087], device='cuda:0')
+hit_1: 0.28807947019867547
+hit_5: 0.5940397350993377
+hit_10: 0.7132450331125828
+hit_20: 0.8044701986754967
+ap: tensor([0.4268], device='cuda:0')
+no increase in recent 4 iters
+#########################################################
+################## epoch 83 ###########################
+loss: 312.8255, len_train_loader:965
+modified_target in every batch:50.9668
+modified_hist in every batch :456.4249
+########## current_metrics ##########
+ndcg_1: 0.2894039735099338
+ndcg_5: tensor([0.4472], device='cuda:0')
+ndcg_10: tensor([0.4867], device='cuda:0')
+ndcg_20: tensor([0.5101], device='cuda:0')
+hit_1: 0.2894039735099338
+hit_5: 0.5899006622516556
+hit_10: 0.7107615894039735
+hit_20: 0.8031456953642384
+ap: tensor([0.4279], device='cuda:0')
+########## best_metrics ##########
+ndcg_1: 0.2894039735099338
+ndcg_5: tensor([0.4474], device='cuda:0')
+ndcg_10: tensor([0.4867], device='cuda:0')
+ndcg_20: tensor([0.5101], device='cuda:0')
+hit_1: 0.2894039735099338
+hit_5: 0.5940397350993377
+hit_10: 0.7132450331125828
+hit_20: 0.8044701986754967
+ap: tensor([0.4279], device='cuda:0')
+no increase in recent 0 iters
+#########################################################
+################## epoch 84 ###########################
+loss: 312.11, len_train_loader:965
+modified_target in every batch:50.9668
+modified_hist in every batch :456.4207
+########## current_metrics ##########
+ndcg_1: 0.27880794701986755
+ndcg_5: tensor([0.4420], device='cuda:0')
+ndcg_10: tensor([0.4810], device='cuda:0')
+ndcg_20: tensor([0.5049], device='cuda:0')
+hit_1: 0.27880794701986755
+hit_5: 0.5879139072847682
+hit_10: 0.7074503311258278
+hit_20: 0.8018211920529801
+ap: tensor([0.4215], device='cuda:0')
+########## best_metrics ##########
+ndcg_1: 0.2894039735099338
+ndcg_5: tensor([0.4474], device='cuda:0')
+ndcg_10: tensor([0.4867], device='cuda:0')
+ndcg_20: tensor([0.5101], device='cuda:0')
+hit_1: 0.2894039735099338
+hit_5: 0.5940397350993377
+hit_10: 0.7132450331125828
+hit_20: 0.8044701986754967
+ap: tensor([0.4279], device='cuda:0')
+no increase in recent 1 iters
+#########################################################
+################## epoch 85 ###########################
+loss: 311.7671, len_train_loader:965
+modified_target in every batch:50.9668
+modified_hist in every batch :455.8031
+########## current_metrics ##########
+ndcg_1: 0.27913907284768213
+ndcg_5: tensor([0.4424], device='cuda:0')
+ndcg_10: tensor([0.4814], device='cuda:0')
+ndcg_20: tensor([0.5047], device='cuda:0')
+hit_1: 0.27913907284768213
+hit_5: 0.5885761589403974
+hit_10: 0.7079470198675497
+hit_20: 0.7996688741721855
+ap: tensor([0.4218], device='cuda:0')
+########## best_metrics ##########
+ndcg_1: 0.2894039735099338
+ndcg_5: tensor([0.4474], device='cuda:0')
+ndcg_10: tensor([0.4867], device='cuda:0')
+ndcg_20: tensor([0.5101], device='cuda:0')
+hit_1: 0.2894039735099338
+hit_5: 0.5940397350993377
+hit_10: 0.7132450331125828
+hit_20: 0.8044701986754967
+ap: tensor([0.4279], device='cuda:0')
+no increase in recent 2 iters
+#########################################################
+################## epoch 86 ###########################
+loss: 312.3383, len_train_loader:965
+modified_target in every batch:50.9668
+modified_hist in every batch :456.886
+########## current_metrics ##########
+ndcg_1: 0.2802980132450331
+ndcg_5: tensor([0.4441], device='cuda:0')
+ndcg_10: tensor([0.4831], device='cuda:0')
+ndcg_20: tensor([0.5059], device='cuda:0')
+hit_1: 0.2802980132450331
+hit_5: 0.5897350993377484
+hit_10: 0.7094370860927153
+hit_20: 0.7993377483443709
+ap: tensor([0.4234], device='cuda:0')
+########## best_metrics ##########
+ndcg_1: 0.2894039735099338
+ndcg_5: tensor([0.4474], device='cuda:0')
+ndcg_10: tensor([0.4867], device='cuda:0')
+ndcg_20: tensor([0.5101], device='cuda:0')
+hit_1: 0.2894039735099338
+hit_5: 0.5940397350993377
+hit_10: 0.7132450331125828
+hit_20: 0.8044701986754967
+ap: tensor([0.4279], device='cuda:0')
+no increase in recent 3 iters
+#########################################################
+################## epoch 87 ###########################
+loss: 311.6664, len_train_loader:965
+modified_target in every batch:50.9668
+modified_hist in every batch :456.2922
+########## current_metrics ##########
+ndcg_1: 0.2817880794701987
+ndcg_5: tensor([0.4429], device='cuda:0')
+ndcg_10: tensor([0.4827], device='cuda:0')
+ndcg_20: tensor([0.5062], device='cuda:0')
+hit_1: 0.2817880794701987
+hit_5: 0.5869205298013245
+hit_10: 0.7087748344370861
+hit_20: 0.8013245033112583
+ap: tensor([0.4233], device='cuda:0')
+########## best_metrics ##########
+ndcg_1: 0.2894039735099338
+ndcg_5: tensor([0.4474], device='cuda:0')
+ndcg_10: tensor([0.4867], device='cuda:0')
+ndcg_20: tensor([0.5101], device='cuda:0')
+hit_1: 0.2894039735099338
+hit_5: 0.5940397350993377
+hit_10: 0.7132450331125828
+hit_20: 0.8044701986754967
+ap: tensor([0.4279], device='cuda:0')
+no increase in recent 4 iters
+#########################################################
+################## epoch 88 ###########################
+loss: 312.5499, len_train_loader:965
+modified_target in every batch:50.9668
+modified_hist in every batch :456.0446
+########## current_metrics ##########
+ndcg_1: 0.29072847682119207
+ndcg_5: tensor([0.4488], device='cuda:0')
+ndcg_10: tensor([0.4878], device='cuda:0')
+ndcg_20: tensor([0.5114], device='cuda:0')
+hit_1: 0.29072847682119207
+hit_5: 0.5902317880794702
+hit_10: 0.7094370860927153
+hit_20: 0.8026490066225166
+ap: tensor([0.4298], device='cuda:0')
+########## best_metrics ##########
+ndcg_1: 0.29072847682119207
+ndcg_5: tensor([0.4488], device='cuda:0')
+ndcg_10: tensor([0.4878], device='cuda:0')
+ndcg_20: tensor([0.5114], device='cuda:0')
+hit_1: 0.29072847682119207
+hit_5: 0.5940397350993377
+hit_10: 0.7132450331125828
+hit_20: 0.8044701986754967
+ap: tensor([0.4298], device='cuda:0')
+no increase in recent 0 iters
+#########################################################
+################## epoch 89 ###########################
+loss: 311.632, len_train_loader:965
+modified_target in every batch:50.9668
+modified_hist in every batch :456.6114
+########## current_metrics ##########
+ndcg_1: 0.2854304635761589
+ndcg_5: tensor([0.4427], device='cuda:0')
+ndcg_10: tensor([0.4834], device='cuda:0')
+ndcg_20: tensor([0.5068], device='cuda:0')
+hit_1: 0.2854304635761589
+hit_5: 0.5834437086092715
+hit_10: 0.7079470198675497
+hit_20: 0.8001655629139073
+ap: tensor([0.4246], device='cuda:0')
+########## best_metrics ##########
+ndcg_1: 0.29072847682119207
+ndcg_5: tensor([0.4488], device='cuda:0')
+ndcg_10: tensor([0.4878], device='cuda:0')
+ndcg_20: tensor([0.5114], device='cuda:0')
+hit_1: 0.29072847682119207
+hit_5: 0.5940397350993377
+hit_10: 0.7132450331125828
+hit_20: 0.8044701986754967
+ap: tensor([0.4298], device='cuda:0')
+no increase in recent 1 iters
+#########################################################
+################## epoch 90 ###########################
+loss: 311.7466, len_train_loader:965
+modified_target in every batch:50.9668
+modified_hist in every batch :456.428
+########## current_metrics ##########
+ndcg_1: 0.28427152317880794
+ndcg_5: tensor([0.4440], device='cuda:0')
+ndcg_10: tensor([0.4827], device='cuda:0')
+ndcg_20: tensor([0.5066], device='cuda:0')
+hit_1: 0.28427152317880794
+hit_5: 0.5882450331125828
+hit_10: 0.7064569536423841
+hit_20: 0.8006622516556291
+ap: tensor([0.4242], device='cuda:0')
+########## best_metrics ##########
+ndcg_1: 0.29072847682119207
+ndcg_5: tensor([0.4488], device='cuda:0')
+ndcg_10: tensor([0.4878], device='cuda:0')
+ndcg_20: tensor([0.5114], device='cuda:0')
+hit_1: 0.29072847682119207
+hit_5: 0.5940397350993377
+hit_10: 0.7132450331125828
+hit_20: 0.8044701986754967
+ap: tensor([0.4298], device='cuda:0')
+no increase in recent 2 iters
+#########################################################
+################## epoch 91 ###########################
+loss: 311.5776, len_train_loader:965
+modified_target in every batch:50.9668
+modified_hist in every batch :456.0332
+########## current_metrics ##########
+ndcg_1: 0.28360927152317883
+ndcg_5: tensor([0.4427], device='cuda:0')
+ndcg_10: tensor([0.4820], device='cuda:0')
+ndcg_20: tensor([0.5053], device='cuda:0')
+hit_1: 0.28360927152317883
+hit_5: 0.5870860927152318
+hit_10: 0.7074503311258278
+hit_20: 0.7988410596026491
+ap: tensor([0.4229], device='cuda:0')
+########## best_metrics ##########
+ndcg_1: 0.29072847682119207
+ndcg_5: tensor([0.4488], device='cuda:0')
+ndcg_10: tensor([0.4878], device='cuda:0')
+ndcg_20: tensor([0.5114], device='cuda:0')
+hit_1: 0.29072847682119207
+hit_5: 0.5940397350993377
+hit_10: 0.7132450331125828
+hit_20: 0.8044701986754967
+ap: tensor([0.4298], device='cuda:0')
+no increase in recent 3 iters
+#########################################################
+################## epoch 92 ###########################
+loss: 312.198, len_train_loader:965
+modified_target in every batch:50.9668
+modified_hist in every batch :456.8891
+########## current_metrics ##########
+ndcg_1: 0.2857615894039735
+ndcg_5: tensor([0.4452], device='cuda:0')
+ndcg_10: tensor([0.4840], device='cuda:0')
+ndcg_20: tensor([0.5079], device='cuda:0')
+hit_1: 0.2857615894039735
+hit_5: 0.58841059602649
+hit_10: 0.7074503311258278
+hit_20: 0.8013245033112583
+ap: tensor([0.4256], device='cuda:0')
+########## best_metrics ##########
+ndcg_1: 0.29072847682119207
+ndcg_5: tensor([0.4488], device='cuda:0')
+ndcg_10: tensor([0.4878], device='cuda:0')
+ndcg_20: tensor([0.5114], device='cuda:0')
+hit_1: 0.29072847682119207
+hit_5: 0.5940397350993377
+hit_10: 0.7132450331125828
+hit_20: 0.8044701986754967
+ap: tensor([0.4298], device='cuda:0')
+no increase in recent 4 iters
+#########################################################
+################## epoch 93 ###########################
+loss: 311.5651, len_train_loader:965
+modified_target in every batch:50.9668
+modified_hist in every batch :455.9088
+########## current_metrics ##########
+ndcg_1: 0.28228476821192056
+ndcg_5: tensor([0.4429], device='cuda:0')
+ndcg_10: tensor([0.4830], device='cuda:0')
+ndcg_20: tensor([0.5065], device='cuda:0')
+hit_1: 0.28228476821192056
+hit_5: 0.5860927152317881
+hit_10: 0.7089403973509933
+hit_20: 0.8014900662251656
+ap: tensor([0.4236], device='cuda:0')
+########## best_metrics ##########
+ndcg_1: 0.29072847682119207
+ndcg_5: tensor([0.4488], device='cuda:0')
+ndcg_10: tensor([0.4878], device='cuda:0')
+ndcg_20: tensor([0.5114], device='cuda:0')
+hit_1: 0.29072847682119207
+hit_5: 0.5940397350993377
+hit_10: 0.7132450331125828
+hit_20: 0.8044701986754967
+ap: tensor([0.4298], device='cuda:0')
+no increase in recent 5 iters
+#########################################################
+################## epoch 94 ###########################
+loss: 311.684, len_train_loader:965
+modified_target in every batch:50.9668
+modified_hist in every batch :457.5036
+########## current_metrics ##########
+ndcg_1: 0.27980132450331124
+ndcg_5: tensor([0.4435], device='cuda:0')
+ndcg_10: tensor([0.4821], device='cuda:0')
+ndcg_20: tensor([0.5063], device='cuda:0')
+hit_1: 0.27980132450331124
+hit_5: 0.5885761589403974
+hit_10: 0.7071192052980132
+hit_20: 0.8021523178807947
+ap: tensor([0.4231], device='cuda:0')
+########## best_metrics ##########
+ndcg_1: 0.29072847682119207
+ndcg_5: tensor([0.4488], device='cuda:0')
+ndcg_10: tensor([0.4878], device='cuda:0')
+ndcg_20: tensor([0.5114], device='cuda:0')
+hit_1: 0.29072847682119207
+hit_5: 0.5940397350993377
+hit_10: 0.7132450331125828
+hit_20: 0.8044701986754967
+ap: tensor([0.4298], device='cuda:0')
+no increase in recent 6 iters
+#########################################################
+################## epoch 95 ###########################
+loss: 311.8588, len_train_loader:965
+modified_target in every batch:50.9668
+modified_hist in every batch :456.2269
+########## current_metrics ##########
+ndcg_1: 0.28211920529801326
+ndcg_5: tensor([0.4442], device='cuda:0')
+ndcg_10: tensor([0.4827], device='cuda:0')
+ndcg_20: tensor([0.5053], device='cuda:0')
+hit_1: 0.28211920529801326
+hit_5: 0.590728476821192
+hit_10: 0.7089403973509933
+hit_20: 0.7978476821192053
+ap: tensor([0.4231], device='cuda:0')
+########## best_metrics ##########
+ndcg_1: 0.29072847682119207
+ndcg_5: tensor([0.4488], device='cuda:0')
+ndcg_10: tensor([0.4878], device='cuda:0')
+ndcg_20: tensor([0.5114], device='cuda:0')
+hit_1: 0.29072847682119207
+hit_5: 0.5940397350993377
+hit_10: 0.7132450331125828
+hit_20: 0.8044701986754967
+ap: tensor([0.4298], device='cuda:0')
+no increase in recent 7 iters
+#########################################################
+################## epoch 96 ###########################
+loss: 312.0669, len_train_loader:965
+modified_target in every batch:50.9668
+modified_hist in every batch :456.5119
+########## current_metrics ##########
+ndcg_1: 0.27847682119205297
+ndcg_5: tensor([0.4431], device='cuda:0')
+ndcg_10: tensor([0.4805], device='cuda:0')
+ndcg_20: tensor([0.5046], device='cuda:0')
+hit_1: 0.27847682119205297
+hit_5: 0.5910596026490066
+hit_10: 0.705794701986755
+hit_20: 0.8008278145695364
+ap: tensor([0.4213], device='cuda:0')
+########## best_metrics ##########
+ndcg_1: 0.29072847682119207
+ndcg_5: tensor([0.4488], device='cuda:0')
+ndcg_10: tensor([0.4878], device='cuda:0')
+ndcg_20: tensor([0.5114], device='cuda:0')
+hit_1: 0.29072847682119207
+hit_5: 0.5940397350993377
+hit_10: 0.7132450331125828
+hit_20: 0.8044701986754967
+ap: tensor([0.4298], device='cuda:0')
+no increase in recent 8 iters
+#########################################################
+################## epoch 97 ###########################
+loss: 311.9018, len_train_loader:965
+modified_target in every batch:50.9668
+modified_hist in every batch :455.7565
+########## current_metrics ##########
+ndcg_1: 0.27847682119205297
+ndcg_5: tensor([0.4428], device='cuda:0')
+ndcg_10: tensor([0.4830], device='cuda:0')
+ndcg_20: tensor([0.5053], device='cuda:0')
+hit_1: 0.27847682119205297
+hit_5: 0.5897350993377484
+hit_10: 0.7127483443708609
+hit_20: 0.8009933774834437
+ap: tensor([0.4221], device='cuda:0')
+########## best_metrics ##########
+ndcg_1: 0.29072847682119207
+ndcg_5: tensor([0.4488], device='cuda:0')
+ndcg_10: tensor([0.4878], device='cuda:0')
+ndcg_20: tensor([0.5114], device='cuda:0')
+hit_1: 0.29072847682119207
+hit_5: 0.5940397350993377
+hit_10: 0.7132450331125828
+hit_20: 0.8044701986754967
+ap: tensor([0.4298], device='cuda:0')
+no increase in recent 9 iters
+#########################################################
+################## epoch 98 ###########################
+loss: 311.4755, len_train_loader:965
+modified_target in every batch:50.9668
+modified_hist in every batch :456.3451
+########## current_metrics ##########
+ndcg_1: 0.28774834437086094
+ndcg_5: tensor([0.4474], device='cuda:0')
+ndcg_10: tensor([0.4856], device='cuda:0')
+ndcg_20: tensor([0.5091], device='cuda:0')
+hit_1: 0.28774834437086094
+hit_5: 0.5915562913907285
+hit_10: 0.7086092715231788
+hit_20: 0.8016556291390728
+ap: tensor([0.4271], device='cuda:0')
+########## best_metrics ##########
+ndcg_1: 0.29072847682119207
+ndcg_5: tensor([0.4488], device='cuda:0')
+ndcg_10: tensor([0.4878], device='cuda:0')
+ndcg_20: tensor([0.5114], device='cuda:0')
+hit_1: 0.29072847682119207
+hit_5: 0.5940397350993377
+hit_10: 0.7132450331125828
+hit_20: 0.8044701986754967
+ap: tensor([0.4298], device='cuda:0')
+no increase in recent 10 iters
+#########################################################
+################## epoch 99 ###########################
+loss: 311.8937, len_train_loader:965
+modified_target in every batch:50.9668
+modified_hist in every batch :457.3782
+########## current_metrics ##########
+ndcg_1: 0.28294701986754967
+ndcg_5: tensor([0.4433], device='cuda:0')
+ndcg_10: tensor([0.4823], device='cuda:0')
+ndcg_20: tensor([0.5055], device='cuda:0')
+hit_1: 0.28294701986754967
+hit_5: 0.5879139072847682
+hit_10: 0.7079470198675497
+hit_20: 0.7993377483443709
+ap: tensor([0.4231], device='cuda:0')
+########## best_metrics ##########
+ndcg_1: 0.29072847682119207
+ndcg_5: tensor([0.4488], device='cuda:0')
+ndcg_10: tensor([0.4878], device='cuda:0')
+ndcg_20: tensor([0.5114], device='cuda:0')
+hit_1: 0.29072847682119207
+hit_5: 0.5940397350993377
+hit_10: 0.7132450331125828
+hit_20: 0.8044701986754967
+ap: tensor([0.4298], device='cuda:0')
+no increase in recent 11 iters
+#########################################################
+################## epoch 100 ###########################
+loss: 310.251, len_train_loader:965
+modified_target in every batch:50.9668
+modified_hist in every batch :456.6964
+########## current_metrics ##########
+ndcg_1: 0.28443708609271523
+ndcg_5: tensor([0.4440], device='cuda:0')
+ndcg_10: tensor([0.4830], device='cuda:0')
+ndcg_20: tensor([0.5070], device='cuda:0')
+hit_1: 0.28443708609271523
+hit_5: 0.5865894039735099
+hit_10: 0.7059602649006622
+hit_20: 0.8003311258278145
+ap: tensor([0.4247], device='cuda:0')
+########## best_metrics ##########
+ndcg_1: 0.29072847682119207
+ndcg_5: tensor([0.4488], device='cuda:0')
+ndcg_10: tensor([0.4878], device='cuda:0')
+ndcg_20: tensor([0.5114], device='cuda:0')
+hit_1: 0.29072847682119207
+hit_5: 0.5940397350993377
+hit_10: 0.7132450331125828
+hit_20: 0.8044701986754967
+ap: tensor([0.4298], device='cuda:0')
+no increase in recent 12 iters
+#########################################################
+model saved at ./datasets/ml1m/model/SASRecml1m-100-model.pkl
+################## epoch 101 ###########################
+loss: 309.255, len_train_loader:965
+modified_target in every batch:50.9668
+modified_hist in every batch :456.5668
+########## current_metrics ##########
+ndcg_1: 0.2824503311258278
+ndcg_5: tensor([0.4429], device='cuda:0')
+ndcg_10: tensor([0.4832], device='cuda:0')
+ndcg_20: tensor([0.5059], device='cuda:0')
+hit_1: 0.2824503311258278
+hit_5: 0.5864238410596027
+hit_10: 0.7099337748344371
+hit_20: 0.7996688741721855
+ap: tensor([0.4234], device='cuda:0')
+########## best_metrics ##########
+ndcg_1: 0.29072847682119207
+ndcg_5: tensor([0.4488], device='cuda:0')
+ndcg_10: tensor([0.4878], device='cuda:0')
+ndcg_20: tensor([0.5114], device='cuda:0')
+hit_1: 0.29072847682119207
+hit_5: 0.5940397350993377
+hit_10: 0.7132450331125828
+hit_20: 0.8044701986754967
+ap: tensor([0.4298], device='cuda:0')
+no increase in recent 13 iters
+#########################################################
+################## epoch 102 ###########################
+loss: 310.5559, len_train_loader:965
+modified_target in every batch:50.9668
+modified_hist in every batch :456.4549
+########## current_metrics ##########
+ndcg_1: 0.28526490066225163
+ndcg_5: tensor([0.4457], device='cuda:0')
+ndcg_10: tensor([0.4836], device='cuda:0')
+ndcg_20: tensor([0.5070], device='cuda:0')
+hit_1: 0.28526490066225163
+hit_5: 0.5908940397350994
+hit_10: 0.706953642384106
+hit_20: 0.7986754966887417
+ap: tensor([0.4252], device='cuda:0')
+########## best_metrics ##########
+ndcg_1: 0.29072847682119207
+ndcg_5: tensor([0.4488], device='cuda:0')
+ndcg_10: tensor([0.4878], device='cuda:0')
+ndcg_20: tensor([0.5114], device='cuda:0')
+hit_1: 0.29072847682119207
+hit_5: 0.5940397350993377
+hit_10: 0.7132450331125828
+hit_20: 0.8044701986754967
+ap: tensor([0.4298], device='cuda:0')
+no increase in recent 14 iters
+#########################################################
+################## epoch 103 ###########################
+loss: 309.759, len_train_loader:965
+modified_target in every batch:50.9668
+modified_hist in every batch :456.4415
+########## current_metrics ##########
+ndcg_1: 0.280794701986755
+ndcg_5: tensor([0.4428], device='cuda:0')
+ndcg_10: tensor([0.4816], device='cuda:0')
+ndcg_20: tensor([0.5053], device='cuda:0')
+hit_1: 0.280794701986755
+hit_5: 0.5872516556291391
+hit_10: 0.705794701986755
+hit_20: 0.7991721854304635
+ap: tensor([0.4227], device='cuda:0')
+########## best_metrics ##########
+ndcg_1: 0.29072847682119207
+ndcg_5: tensor([0.4488], device='cuda:0')
+ndcg_10: tensor([0.4878], device='cuda:0')
+ndcg_20: tensor([0.5114], device='cuda:0')
+hit_1: 0.29072847682119207
+hit_5: 0.5940397350993377
+hit_10: 0.7132450331125828
+hit_20: 0.8044701986754967
+ap: tensor([0.4298], device='cuda:0')
+no increase in recent 15 iters
+#########################################################
+################## epoch 104 ###########################
+loss: 309.8074, len_train_loader:965
+modified_target in every batch:50.9668
+modified_hist in every batch :456.2031
+########## current_metrics ##########
+ndcg_1: 0.2855960264900662
+ndcg_5: tensor([0.4454], device='cuda:0')
+ndcg_10: tensor([0.4841], device='cuda:0')
+ndcg_20: tensor([0.5086], device='cuda:0')
+hit_1: 0.2855960264900662
+hit_5: 0.5872516556291391
+hit_10: 0.7056291390728476
+hit_20: 0.8016556291390728
+ap: tensor([0.4264], device='cuda:0')
+########## best_metrics ##########
+ndcg_1: 0.29072847682119207
+ndcg_5: tensor([0.4488], device='cuda:0')
+ndcg_10: tensor([0.4878], device='cuda:0')
+ndcg_20: tensor([0.5114], device='cuda:0')
+hit_1: 0.29072847682119207
+hit_5: 0.5940397350993377
+hit_10: 0.7132450331125828
+hit_20: 0.8044701986754967
+ap: tensor([0.4298], device='cuda:0')
+no increase in recent 16 iters
+#########################################################
+################## epoch 105 ###########################
+loss: 310.057, len_train_loader:965
+modified_target in every batch:50.9668
+modified_hist in every batch :456.2984
+########## current_metrics ##########
+ndcg_1: 0.27781456953642386
+ndcg_5: tensor([0.4418], device='cuda:0')
+ndcg_10: tensor([0.4811], device='cuda:0')
+ndcg_20: tensor([0.5051], device='cuda:0')
+hit_1: 0.27781456953642386
+hit_5: 0.5862582781456953
+hit_10: 0.7066225165562914
+hit_20: 0.8008278145695364
+ap: tensor([0.4220], device='cuda:0')
+########## best_metrics ##########
+ndcg_1: 0.29072847682119207
+ndcg_5: tensor([0.4488], device='cuda:0')
+ndcg_10: tensor([0.4878], device='cuda:0')
+ndcg_20: tensor([0.5114], device='cuda:0')
+hit_1: 0.29072847682119207
+hit_5: 0.5940397350993377
+hit_10: 0.7132450331125828
+hit_20: 0.8044701986754967
+ap: tensor([0.4298], device='cuda:0')
+no increase in recent 17 iters
+#########################################################
+################## epoch 106 ###########################
+loss: 309.9121, len_train_loader:965
+modified_target in every batch:50.9668
+modified_hist in every batch :456.1969
+########## current_metrics ##########
+ndcg_1: 0.27980132450331124
+ndcg_5: tensor([0.4426], device='cuda:0')
+ndcg_10: tensor([0.4808], device='cuda:0')
+ndcg_20: tensor([0.5046], device='cuda:0')
+hit_1: 0.27980132450331124
+hit_5: 0.5885761589403974
+hit_10: 0.7056291390728476
+hit_20: 0.7993377483443709
+ap: tensor([0.4218], device='cuda:0')
+########## best_metrics ##########
+ndcg_1: 0.29072847682119207
+ndcg_5: tensor([0.4488], device='cuda:0')
+ndcg_10: tensor([0.4878], device='cuda:0')
+ndcg_20: tensor([0.5114], device='cuda:0')
+hit_1: 0.29072847682119207
+hit_5: 0.5940397350993377
+hit_10: 0.7132450331125828
+hit_20: 0.8044701986754967
+ap: tensor([0.4298], device='cuda:0')
+no increase in recent 18 iters
+#########################################################
+################## epoch 107 ###########################
+loss: 310.0992, len_train_loader:965
+modified_target in every batch:50.9668
+modified_hist in every batch :457.1264
+########## current_metrics ##########
+ndcg_1: 0.27913907284768213
+ndcg_5: tensor([0.4418], device='cuda:0')
+ndcg_10: tensor([0.4810], device='cuda:0')
+ndcg_20: tensor([0.5044], device='cuda:0')
+hit_1: 0.27913907284768213
+hit_5: 0.5880794701986755
+hit_10: 0.7082781456953643
+hit_20: 0.8004966887417219
+ap: tensor([0.4212], device='cuda:0')
+########## best_metrics ##########
+ndcg_1: 0.29072847682119207
+ndcg_5: tensor([0.4488], device='cuda:0')
+ndcg_10: tensor([0.4878], device='cuda:0')
+ndcg_20: tensor([0.5114], device='cuda:0')
+hit_1: 0.29072847682119207
+hit_5: 0.5940397350993377
+hit_10: 0.7132450331125828
+hit_20: 0.8044701986754967
+ap: tensor([0.4298], device='cuda:0')
+no increase in recent 19 iters
+#########################################################
+################## epoch 108 ###########################
+loss: 309.5772, len_train_loader:965
+modified_target in every batch:50.9668
+modified_hist in every batch :455.3627
+########## current_metrics ##########
+ndcg_1: 0.2814569536423841
+ndcg_5: tensor([0.4434], device='cuda:0')
+ndcg_10: tensor([0.4831], device='cuda:0')
+ndcg_20: tensor([0.5059], device='cuda:0')
+hit_1: 0.2814569536423841
+hit_5: 0.5870860927152318
+hit_10: 0.7087748344370861
+hit_20: 0.7986754966887417
+ap: tensor([0.4237], device='cuda:0')
+########## best_metrics ##########
+ndcg_1: 0.29072847682119207
+ndcg_5: tensor([0.4488], device='cuda:0')
+ndcg_10: tensor([0.4878], device='cuda:0')
+ndcg_20: tensor([0.5114], device='cuda:0')
+hit_1: 0.29072847682119207
+hit_5: 0.5940397350993377
+hit_10: 0.7132450331125828
+hit_20: 0.8044701986754967
+ap: tensor([0.4298], device='cuda:0')
+no increase in recent 20 iters
+#########################################################
+################## epoch 109 ###########################
+loss: 309.8461, len_train_loader:965
+modified_target in every batch:50.9668
+modified_hist in every batch :456.0083
+########## current_metrics ##########
+ndcg_1: 0.28443708609271523
+ndcg_5: tensor([0.4455], device='cuda:0')
+ndcg_10: tensor([0.4836], device='cuda:0')
+ndcg_20: tensor([0.5074], device='cuda:0')
+hit_1: 0.28443708609271523
+hit_5: 0.5887417218543046
+hit_10: 0.705794701986755
+hit_20: 0.7993377483443709
+ap: tensor([0.4255], device='cuda:0')
+########## best_metrics ##########
+ndcg_1: 0.29072847682119207
+ndcg_5: tensor([0.4488], device='cuda:0')
+ndcg_10: tensor([0.4878], device='cuda:0')
+ndcg_20: tensor([0.5114], device='cuda:0')
+hit_1: 0.29072847682119207
+hit_5: 0.5940397350993377
+hit_10: 0.7132450331125828
+hit_20: 0.8044701986754967
+ap: tensor([0.4298], device='cuda:0')
+no increase in recent 21 iters
+#########################################################
+################## epoch 110 ###########################
+loss: 309.6375, len_train_loader:965
+modified_target in every batch:50.9668
+modified_hist in every batch :456.3264
+########## current_metrics ##########
+ndcg_1: 0.27963576158940395
+ndcg_5: tensor([0.4433], device='cuda:0')
+ndcg_10: tensor([0.4830], device='cuda:0')
+ndcg_20: tensor([0.5064], device='cuda:0')
+hit_1: 0.27963576158940395
+hit_5: 0.5890728476821192
+hit_10: 0.7105960264900663
+hit_20: 0.8028145695364238
+ap: tensor([0.4230], device='cuda:0')
+########## best_metrics ##########
+ndcg_1: 0.29072847682119207
+ndcg_5: tensor([0.4488], device='cuda:0')
+ndcg_10: tensor([0.4878], device='cuda:0')
+ndcg_20: tensor([0.5114], device='cuda:0')
+hit_1: 0.29072847682119207
+hit_5: 0.5940397350993377
+hit_10: 0.7132450331125828
+hit_20: 0.8044701986754967
+ap: tensor([0.4298], device='cuda:0')
+no increase in recent 22 iters
+#########################################################
+################## epoch 111 ###########################
+loss: 308.133, len_train_loader:965
+modified_target in every batch:50.9668
+modified_hist in every batch :456.8808
+########## current_metrics ##########
+ndcg_1: 0.2816225165562914
+ndcg_5: tensor([0.4454], device='cuda:0')
+ndcg_10: tensor([0.4839], device='cuda:0')
+ndcg_20: tensor([0.5074], device='cuda:0')
+hit_1: 0.2816225165562914
+hit_5: 0.5908940397350994
+hit_10: 0.7096026490066225
+hit_20: 0.8016556291390728
+ap: tensor([0.4247], device='cuda:0')
+########## best_metrics ##########
+ndcg_1: 0.29072847682119207
+ndcg_5: tensor([0.4488], device='cuda:0')
+ndcg_10: tensor([0.4878], device='cuda:0')
+ndcg_20: tensor([0.5114], device='cuda:0')
+hit_1: 0.29072847682119207
+hit_5: 0.5940397350993377
+hit_10: 0.7132450331125828
+hit_20: 0.8044701986754967
+ap: tensor([0.4298], device='cuda:0')
+no increase in recent 23 iters
+#########################################################
+################## epoch 112 ###########################
+loss: 308.4766, len_train_loader:965
+modified_target in every batch:50.9668
+modified_hist in every batch :456.5161
+########## current_metrics ##########
+ndcg_1: 0.28294701986754967
+ndcg_5: tensor([0.4464], device='cuda:0')
+ndcg_10: tensor([0.4840], device='cuda:0')
+ndcg_20: tensor([0.5079], device='cuda:0')
+hit_1: 0.28294701986754967
+hit_5: 0.5935430463576159
+hit_10: 0.7092715231788079
+hit_20: 0.8036423841059602
+ap: tensor([0.4248], device='cuda:0')
+########## best_metrics ##########
+ndcg_1: 0.29072847682119207
+ndcg_5: tensor([0.4488], device='cuda:0')
+ndcg_10: tensor([0.4878], device='cuda:0')
+ndcg_20: tensor([0.5114], device='cuda:0')
+hit_1: 0.29072847682119207
+hit_5: 0.5940397350993377
+hit_10: 0.7132450331125828
+hit_20: 0.8044701986754967
+ap: tensor([0.4298], device='cuda:0')
+no increase in recent 24 iters
+#########################################################
+################## epoch 113 ###########################
+loss: 308.1451, len_train_loader:965
+modified_target in every batch:50.9668
+modified_hist in every batch :456.5347
+########## current_metrics ##########
+ndcg_1: 0.28228476821192056
+ndcg_5: tensor([0.4443], device='cuda:0')
+ndcg_10: tensor([0.4827], device='cuda:0')
+ndcg_20: tensor([0.5064], device='cuda:0')
+hit_1: 0.28228476821192056
+hit_5: 0.5897350993377484
+hit_10: 0.7074503311258278
+hit_20: 0.8009933774834437
+ap: tensor([0.4238], device='cuda:0')
+########## best_metrics ##########
+ndcg_1: 0.29072847682119207
+ndcg_5: tensor([0.4488], device='cuda:0')
+ndcg_10: tensor([0.4878], device='cuda:0')
+ndcg_20: tensor([0.5114], device='cuda:0')
+hit_1: 0.29072847682119207
+hit_5: 0.5940397350993377
+hit_10: 0.7132450331125828
+hit_20: 0.8044701986754967
+ap: tensor([0.4298], device='cuda:0')
+no increase in recent 25 iters
+#########################################################
+################## epoch 114 ###########################
+loss: 308.3029, len_train_loader:965
+modified_target in every batch:50.9668
+modified_hist in every batch :456.458
+########## current_metrics ##########
+ndcg_1: 0.28228476821192056
+ndcg_5: tensor([0.4423], device='cuda:0')
+ndcg_10: tensor([0.4819], device='cuda:0')
+ndcg_20: tensor([0.5062], device='cuda:0')
+hit_1: 0.28228476821192056
+hit_5: 0.5877483443708609
+hit_10: 0.7089403973509933
+hit_20: 0.8048013245033112
+ap: tensor([0.4224], device='cuda:0')
+########## best_metrics ##########
+ndcg_1: 0.29072847682119207
+ndcg_5: tensor([0.4488], device='cuda:0')
+ndcg_10: tensor([0.4878], device='cuda:0')
+ndcg_20: tensor([0.5114], device='cuda:0')
+hit_1: 0.29072847682119207
+hit_5: 0.5940397350993377
+hit_10: 0.7132450331125828
+hit_20: 0.8048013245033112
+ap: tensor([0.4298], device='cuda:0')
+no increase in recent 0 iters
+#########################################################
+################## epoch 115 ###########################
+loss: 307.7878, len_train_loader:965
+modified_target in every batch:50.9668
+modified_hist in every batch :456.1855
+########## current_metrics ##########
+ndcg_1: 0.28658940397350996
+ndcg_5: tensor([0.4465], device='cuda:0')
+ndcg_10: tensor([0.4852], device='cuda:0')
+ndcg_20: tensor([0.5090], device='cuda:0')
+hit_1: 0.28658940397350996
+hit_5: 0.589569536423841
+hit_10: 0.7084437086092715
+hit_20: 0.8028145695364238
+ap: tensor([0.4267], device='cuda:0')
+########## best_metrics ##########
+ndcg_1: 0.29072847682119207
+ndcg_5: tensor([0.4488], device='cuda:0')
+ndcg_10: tensor([0.4878], device='cuda:0')
+ndcg_20: tensor([0.5114], device='cuda:0')
+hit_1: 0.29072847682119207
+hit_5: 0.5940397350993377
+hit_10: 0.7132450331125828
+hit_20: 0.8048013245033112
+ap: tensor([0.4298], device='cuda:0')
+no increase in recent 1 iters
+#########################################################
+################## epoch 116 ###########################
+loss: 308.0093, len_train_loader:965
+modified_target in every batch:50.9668
+modified_hist in every batch :456.1824
+########## current_metrics ##########
+ndcg_1: 0.27847682119205297
+ndcg_5: tensor([0.4421], device='cuda:0')
+ndcg_10: tensor([0.4810], device='cuda:0')
+ndcg_20: tensor([0.5048], device='cuda:0')
+hit_1: 0.27847682119205297
+hit_5: 0.5882450331125828
+hit_10: 0.7076158940397351
+hit_20: 0.8014900662251656
+ap: tensor([0.4214], device='cuda:0')
+########## best_metrics ##########
+ndcg_1: 0.29072847682119207
+ndcg_5: tensor([0.4488], device='cuda:0')
+ndcg_10: tensor([0.4878], device='cuda:0')
+ndcg_20: tensor([0.5114], device='cuda:0')
+hit_1: 0.29072847682119207
+hit_5: 0.5940397350993377
+hit_10: 0.7132450331125828
+hit_20: 0.8048013245033112
+ap: tensor([0.4298], device='cuda:0')
+no increase in recent 2 iters
+#########################################################
+################## epoch 117 ###########################
+loss: 308.2417, len_train_loader:965
+modified_target in every batch:50.9668
+modified_hist in every batch :456.5109
+########## current_metrics ##########
+ndcg_1: 0.28327814569536425
+ndcg_5: tensor([0.4463], device='cuda:0')
+ndcg_10: tensor([0.4840], device='cuda:0')
+ndcg_20: tensor([0.5077], device='cuda:0')
+hit_1: 0.28327814569536425
+hit_5: 0.5923841059602649
+hit_10: 0.708112582781457
+hit_20: 0.8013245033112583
+ap: tensor([0.4252], device='cuda:0')
+########## best_metrics ##########
+ndcg_1: 0.29072847682119207
+ndcg_5: tensor([0.4488], device='cuda:0')
+ndcg_10: tensor([0.4878], device='cuda:0')
+ndcg_20: tensor([0.5114], device='cuda:0')
+hit_1: 0.29072847682119207
+hit_5: 0.5940397350993377
+hit_10: 0.7132450331125828
+hit_20: 0.8048013245033112
+ap: tensor([0.4298], device='cuda:0')
+no increase in recent 3 iters
+#########################################################
+################## epoch 118 ###########################
+loss: 308.1091, len_train_loader:965
+modified_target in every batch:50.9668
+modified_hist in every batch :456.0632
+########## current_metrics ##########
+ndcg_1: 0.28327814569536425
+ndcg_5: tensor([0.4438], device='cuda:0')
+ndcg_10: tensor([0.4833], device='cuda:0')
+ndcg_20: tensor([0.5065], device='cuda:0')
+hit_1: 0.28327814569536425
+hit_5: 0.5875827814569536
+hit_10: 0.7089403973509933
+hit_20: 0.8004966887417219
+ap: tensor([0.4240], device='cuda:0')
+########## best_metrics ##########
+ndcg_1: 0.29072847682119207
+ndcg_5: tensor([0.4488], device='cuda:0')
+ndcg_10: tensor([0.4878], device='cuda:0')
+ndcg_20: tensor([0.5114], device='cuda:0')
+hit_1: 0.29072847682119207
+hit_5: 0.5940397350993377
+hit_10: 0.7132450331125828
+hit_20: 0.8048013245033112
+ap: tensor([0.4298], device='cuda:0')
+no increase in recent 4 iters
+#########################################################
+################## epoch 119 ###########################
+loss: 308.3465, len_train_loader:965
+modified_target in every batch:50.9668
+modified_hist in every batch :456.4
+########## current_metrics ##########
+ndcg_1: 0.2824503311258278
+ndcg_5: tensor([0.4436], device='cuda:0')
+ndcg_10: tensor([0.4825], device='cuda:0')
+ndcg_20: tensor([0.5063], device='cuda:0')
+hit_1: 0.2824503311258278
+hit_5: 0.5880794701986755
+hit_10: 0.7071192052980132
+hit_20: 0.801158940397351
+ap: tensor([0.4236], device='cuda:0')
+########## best_metrics ##########
+ndcg_1: 0.29072847682119207
+ndcg_5: tensor([0.4488], device='cuda:0')
+ndcg_10: tensor([0.4878], device='cuda:0')
+ndcg_20: tensor([0.5114], device='cuda:0')
+hit_1: 0.29072847682119207
+hit_5: 0.5940397350993377
+hit_10: 0.7132450331125828
+hit_20: 0.8048013245033112
+ap: tensor([0.4298], device='cuda:0')
+no increase in recent 5 iters
+#########################################################
+################## epoch 120 ###########################
+loss: 308.0573, len_train_loader:965
+modified_target in every batch:50.9668
+modified_hist in every batch :456.5772
+########## current_metrics ##########
+ndcg_1: 0.2816225165562914
+ndcg_5: tensor([0.4450], device='cuda:0')
+ndcg_10: tensor([0.4830], device='cuda:0')
+ndcg_20: tensor([0.5060], device='cuda:0')
+hit_1: 0.2816225165562914
+hit_5: 0.5905629139072848
+hit_10: 0.7074503311258278
+hit_20: 0.7980132450331126
+ap: tensor([0.4240], device='cuda:0')
+########## best_metrics ##########
+ndcg_1: 0.29072847682119207
+ndcg_5: tensor([0.4488], device='cuda:0')
+ndcg_10: tensor([0.4878], device='cuda:0')
+ndcg_20: tensor([0.5114], device='cuda:0')
+hit_1: 0.29072847682119207
+hit_5: 0.5940397350993377
+hit_10: 0.7132450331125828
+hit_20: 0.8048013245033112
+ap: tensor([0.4298], device='cuda:0')
+no increase in recent 6 iters
+#########################################################
+################## epoch 121 ###########################
+loss: 308.5573, len_train_loader:965
+modified_target in every batch:50.9668
+modified_hist in every batch :456.458
+########## current_metrics ##########
+ndcg_1: 0.2793046357615894
+ndcg_5: tensor([0.4445], device='cuda:0')
+ndcg_10: tensor([0.4833], device='cuda:0')
+ndcg_20: tensor([0.5059], device='cuda:0')
+hit_1: 0.2793046357615894
+hit_5: 0.5917218543046358
+hit_10: 0.7105960264900663
+hit_20: 0.7995033112582781
+ap: tensor([0.4232], device='cuda:0')
+########## best_metrics ##########
+ndcg_1: 0.29072847682119207
+ndcg_5: tensor([0.4488], device='cuda:0')
+ndcg_10: tensor([0.4878], device='cuda:0')
+ndcg_20: tensor([0.5114], device='cuda:0')
+hit_1: 0.29072847682119207
+hit_5: 0.5940397350993377
+hit_10: 0.7132450331125828
+hit_20: 0.8048013245033112
+ap: tensor([0.4298], device='cuda:0')
+no increase in recent 7 iters
+#########################################################
+################## epoch 122 ###########################
+loss: 307.0209, len_train_loader:965
+modified_target in every batch:50.9668
+modified_hist in every batch :457.542
+########## current_metrics ##########
+ndcg_1: 0.2826158940397351
+ndcg_5: tensor([0.4433], device='cuda:0')
+ndcg_10: tensor([0.4826], device='cuda:0')
+ndcg_20: tensor([0.5064], device='cuda:0')
+hit_1: 0.2826158940397351
+hit_5: 0.5872516556291391
+hit_10: 0.7077814569536424
+hit_20: 0.8013245033112583
+ap: tensor([0.4236], device='cuda:0')
+########## best_metrics ##########
+ndcg_1: 0.29072847682119207
+ndcg_5: tensor([0.4488], device='cuda:0')
+ndcg_10: tensor([0.4878], device='cuda:0')
+ndcg_20: tensor([0.5114], device='cuda:0')
+hit_1: 0.29072847682119207
+hit_5: 0.5940397350993377
+hit_10: 0.7132450331125828
+hit_20: 0.8048013245033112
+ap: tensor([0.4298], device='cuda:0')
+no increase in recent 8 iters
+#########################################################
+################## epoch 123 ###########################
+loss: 306.2903, len_train_loader:965
+modified_target in every batch:50.9668
+modified_hist in every batch :456.7762
+########## current_metrics ##########
+ndcg_1: 0.28211920529801326
+ndcg_5: tensor([0.4445], device='cuda:0')
+ndcg_10: tensor([0.4831], device='cuda:0')
+ndcg_20: tensor([0.5071], device='cuda:0')
+hit_1: 0.28211920529801326
+hit_5: 0.5903973509933775
+hit_10: 0.7089403973509933
+hit_20: 0.8038079470198676
+ap: tensor([0.4238], device='cuda:0')
+########## best_metrics ##########
+ndcg_1: 0.29072847682119207
+ndcg_5: tensor([0.4488], device='cuda:0')
+ndcg_10: tensor([0.4878], device='cuda:0')
+ndcg_20: tensor([0.5114], device='cuda:0')
+hit_1: 0.29072847682119207
+hit_5: 0.5940397350993377
+hit_10: 0.7132450331125828
+hit_20: 0.8048013245033112
+ap: tensor([0.4298], device='cuda:0')
+no increase in recent 9 iters
+#########################################################
+################## epoch 124 ###########################
+loss: 306.8127, len_train_loader:965
+modified_target in every batch:50.9668
+modified_hist in every batch :456.7948
+########## current_metrics ##########
+ndcg_1: 0.28228476821192056
+ndcg_5: tensor([0.4428], device='cuda:0')
+ndcg_10: tensor([0.4828], device='cuda:0')
+ndcg_20: tensor([0.5064], device='cuda:0')
+hit_1: 0.28228476821192056
+hit_5: 0.5852649006622517
+hit_10: 0.7079470198675497
+hit_20: 0.801158940397351
+ap: tensor([0.4237], device='cuda:0')
+########## best_metrics ##########
+ndcg_1: 0.29072847682119207
+ndcg_5: tensor([0.4488], device='cuda:0')
+ndcg_10: tensor([0.4878], device='cuda:0')
+ndcg_20: tensor([0.5114], device='cuda:0')
+hit_1: 0.29072847682119207
+hit_5: 0.5940397350993377
+hit_10: 0.7132450331125828
+hit_20: 0.8048013245033112
+ap: tensor([0.4298], device='cuda:0')
+no increase in recent 10 iters
+#########################################################
+################## epoch 125 ###########################
+loss: 306.4952, len_train_loader:965
+modified_target in every batch:50.9668
+modified_hist in every batch :456.8974
+########## current_metrics ##########
+ndcg_1: 0.2827814569536424
+ndcg_5: tensor([0.4449], device='cuda:0')
+ndcg_10: tensor([0.4841], device='cuda:0')
+ndcg_20: tensor([0.5071], device='cuda:0')
+hit_1: 0.2827814569536424
+hit_5: 0.590066225165563
+hit_10: 0.7105960264900663
+hit_20: 0.801158940397351
+ap: tensor([0.4245], device='cuda:0')
+########## best_metrics ##########
+ndcg_1: 0.29072847682119207
+ndcg_5: tensor([0.4488], device='cuda:0')
+ndcg_10: tensor([0.4878], device='cuda:0')
+ndcg_20: tensor([0.5114], device='cuda:0')
+hit_1: 0.29072847682119207
+hit_5: 0.5940397350993377
+hit_10: 0.7132450331125828
+hit_20: 0.8048013245033112
+ap: tensor([0.4298], device='cuda:0')
+no increase in recent 11 iters
+#########################################################
+################## epoch 126 ###########################
+loss: 306.8576, len_train_loader:965
+modified_target in every batch:50.9668
+modified_hist in every batch :456.8694
+########## current_metrics ##########
+ndcg_1: 0.28394039735099336
+ndcg_5: tensor([0.4447], device='cuda:0')
+ndcg_10: tensor([0.4849], device='cuda:0')
+ndcg_20: tensor([0.5076], device='cuda:0')
+hit_1: 0.28394039735099336
+hit_5: 0.5882450331125828
+hit_10: 0.7120860927152318
+hit_20: 0.8018211920529801
+ap: tensor([0.4250], device='cuda:0')
+########## best_metrics ##########
+ndcg_1: 0.29072847682119207
+ndcg_5: tensor([0.4488], device='cuda:0')
+ndcg_10: tensor([0.4878], device='cuda:0')
+ndcg_20: tensor([0.5114], device='cuda:0')
+hit_1: 0.29072847682119207
+hit_5: 0.5940397350993377
+hit_10: 0.7132450331125828
+hit_20: 0.8048013245033112
+ap: tensor([0.4298], device='cuda:0')
+no increase in recent 12 iters
+#########################################################
+################## epoch 127 ###########################
+loss: 306.5902, len_train_loader:965
+modified_target in every batch:50.9668
+modified_hist in every batch :456.8466
+########## current_metrics ##########
+ndcg_1: 0.27947019867549666
+ndcg_5: tensor([0.4443], device='cuda:0')
+ndcg_10: tensor([0.4829], device='cuda:0')
+ndcg_20: tensor([0.5059], device='cuda:0')
+hit_1: 0.27947019867549666
+hit_5: 0.5913907284768212
+hit_10: 0.7096026490066225
+hit_20: 0.8
+ap: tensor([0.4232], device='cuda:0')
+########## best_metrics ##########
+ndcg_1: 0.29072847682119207
+ndcg_5: tensor([0.4488], device='cuda:0')
+ndcg_10: tensor([0.4878], device='cuda:0')
+ndcg_20: tensor([0.5114], device='cuda:0')
+hit_1: 0.29072847682119207
+hit_5: 0.5940397350993377
+hit_10: 0.7132450331125828
+hit_20: 0.8048013245033112
+ap: tensor([0.4298], device='cuda:0')
+no increase in recent 13 iters
+#########################################################
+################## epoch 128 ###########################
+loss: 306.7222, len_train_loader:965
+modified_target in every batch:50.9668
+modified_hist in every batch :456.6114
+########## current_metrics ##########
+ndcg_1: 0.2814569536423841
+ndcg_5: tensor([0.4445], device='cuda:0')
+ndcg_10: tensor([0.4842], device='cuda:0')
+ndcg_20: tensor([0.5071], device='cuda:0')
+hit_1: 0.2814569536423841
+hit_5: 0.589569536423841
+hit_10: 0.7110927152317881
+hit_20: 0.8014900662251656
+ap: tensor([0.4243], device='cuda:0')
+########## best_metrics ##########
+ndcg_1: 0.29072847682119207
+ndcg_5: tensor([0.4488], device='cuda:0')
+ndcg_10: tensor([0.4878], device='cuda:0')
+ndcg_20: tensor([0.5114], device='cuda:0')
+hit_1: 0.29072847682119207
+hit_5: 0.5940397350993377
+hit_10: 0.7132450331125828
+hit_20: 0.8048013245033112
+ap: tensor([0.4298], device='cuda:0')
+no increase in recent 14 iters
+#########################################################
+################## epoch 129 ###########################
+loss: 306.7676, len_train_loader:965
+modified_target in every batch:50.9668
+modified_hist in every batch :457.1544
+########## current_metrics ##########
+ndcg_1: 0.28410596026490065
+ndcg_5: tensor([0.4450], device='cuda:0')
+ndcg_10: tensor([0.4846], device='cuda:0')
+ndcg_20: tensor([0.5075], device='cuda:0')
+hit_1: 0.28410596026490065
+hit_5: 0.5892384105960264
+hit_10: 0.7110927152317881
+hit_20: 0.8008278145695364
+ap: tensor([0.4251], device='cuda:0')
+########## best_metrics ##########
+ndcg_1: 0.29072847682119207
+ndcg_5: tensor([0.4488], device='cuda:0')
+ndcg_10: tensor([0.4878], device='cuda:0')
+ndcg_20: tensor([0.5114], device='cuda:0')
+hit_1: 0.29072847682119207
+hit_5: 0.5940397350993377
+hit_10: 0.7132450331125828
+hit_20: 0.8048013245033112
+ap: tensor([0.4298], device='cuda:0')
+no increase in recent 15 iters
+#########################################################
+################## epoch 130 ###########################
+loss: 306.2417, len_train_loader:965
+modified_target in every batch:50.9668
+modified_hist in every batch :457.6891
+########## current_metrics ##########
+ndcg_1: 0.28377483443708607
+ndcg_5: tensor([0.4445], device='cuda:0')
+ndcg_10: tensor([0.4849], device='cuda:0')
+ndcg_20: tensor([0.5079], device='cuda:0')
+hit_1: 0.28377483443708607
+hit_5: 0.5877483443708609
+hit_10: 0.7115894039735099
+hit_20: 0.8018211920529801
+ap: tensor([0.4253], device='cuda:0')
+########## best_metrics ##########
+ndcg_1: 0.29072847682119207
+ndcg_5: tensor([0.4488], device='cuda:0')
+ndcg_10: tensor([0.4878], device='cuda:0')
+ndcg_20: tensor([0.5114], device='cuda:0')
+hit_1: 0.29072847682119207
+hit_5: 0.5940397350993377
+hit_10: 0.7132450331125828
+hit_20: 0.8048013245033112
+ap: tensor([0.4298], device='cuda:0')
+no increase in recent 16 iters
+#########################################################
+################## epoch 131 ###########################
+loss: 306.4621, len_train_loader:965
+modified_target in every batch:50.9668
+modified_hist in every batch :456.6653
+########## current_metrics ##########
+ndcg_1: 0.2859271523178808
+ndcg_5: tensor([0.4448], device='cuda:0')
+ndcg_10: tensor([0.4842], device='cuda:0')
+ndcg_20: tensor([0.5080], device='cuda:0')
+hit_1: 0.2859271523178808
+hit_5: 0.5880794701986755
+hit_10: 0.7086092715231788
+hit_20: 0.8026490066225166
+ap: tensor([0.4254], device='cuda:0')
+########## best_metrics ##########
+ndcg_1: 0.29072847682119207
+ndcg_5: tensor([0.4488], device='cuda:0')
+ndcg_10: tensor([0.4878], device='cuda:0')
+ndcg_20: tensor([0.5114], device='cuda:0')
+hit_1: 0.29072847682119207
+hit_5: 0.5940397350993377
+hit_10: 0.7132450331125828
+hit_20: 0.8048013245033112
+ap: tensor([0.4298], device='cuda:0')
+no increase in recent 17 iters
+#########################################################
+################## epoch 132 ###########################
+loss: 306.7297, len_train_loader:965
+modified_target in every batch:50.9668
+modified_hist in every batch :456.0756
+########## current_metrics ##########
+ndcg_1: 0.28427152317880794
+ndcg_5: tensor([0.4455], device='cuda:0')
+ndcg_10: tensor([0.4847], device='cuda:0')
+ndcg_20: tensor([0.5079], device='cuda:0')
+hit_1: 0.28427152317880794
+hit_5: 0.5890728476821192
+hit_10: 0.7096026490066225
+hit_20: 0.8006622516556291
+ap: tensor([0.4256], device='cuda:0')
+########## best_metrics ##########
+ndcg_1: 0.29072847682119207
+ndcg_5: tensor([0.4488], device='cuda:0')
+ndcg_10: tensor([0.4878], device='cuda:0')
+ndcg_20: tensor([0.5114], device='cuda:0')
+hit_1: 0.29072847682119207
+hit_5: 0.5940397350993377
+hit_10: 0.7132450331125828
+hit_20: 0.8048013245033112
+ap: tensor([0.4298], device='cuda:0')
+no increase in recent 18 iters
+#########################################################

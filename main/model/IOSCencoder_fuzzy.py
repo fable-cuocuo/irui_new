@@ -24,6 +24,12 @@ class IOSC_encoder_Fuzzy(IOSC_encoder):
         self.reliability_threshold = float(config.get("reliability_threshold", 0.0))
         self.use_interest_specific_scorer = bool(config.get("use_interest_specific_scorer", True))
         self.salience_temperature = float(config.get("salience_temperature", 1.0))
+        self.salience_importance_weight = float(config.get("salience_importance_weight", 1.0))
+        self.salience_recency_weight = float(config.get("salience_recency_weight", 0.0))
+        self.salience_confidence_weight = float(config.get("salience_confidence_weight", 0.0))
+        self.salience_fatigue_weight = float(config.get("salience_fatigue_weight", 0.0))
+        self.recency_gamma = float(config.get("recency_gamma", 0.5))
+        self.fatigue_window = int(config.get("fatigue_window", 4))
 
         hidden_size = int(config["hidden_size"])
         # ComiRec-style learnable interest queries.
@@ -122,13 +128,51 @@ class IOSC_encoder_Fuzzy(IOSC_encoder):
         min_index[min_reliability > self.reliability_threshold] = -1
         return min_index.unsqueeze(1)
 
-    def _compute_interest_salience(self, alpha, hist_item_ids):
+    def _compute_interest_salience(self, alpha, beta, hist_item_ids):
         """
-        Interest salience from representative items:
-            sal_k = softmax_k( sum_t alpha_{k,t} * importance(i_t) )
+        Interest salience from three factors:
+            1) item representativeness (item_importance)
+            2) recency activation (recent interactions are up-weighted)
+            3) interest confidence (lower attention entropy -> higher confidence)
         """
+        valid_mask = hist_item_ids.ne(0)
         importance = self.item_importance(hist_item_ids).squeeze(-1)  # [B, L]
-        salience_logits = torch.sum(alpha * importance.unsqueeze(1), dim=-1)  # [B, K]
+        importance_term = torch.sum(alpha * importance.unsqueeze(1), dim=-1)  # [B, K]
+
+        # Recency activation term: later valid positions get larger weight.
+        seq_len = hist_item_ids.size(1)
+        pos = torch.arange(seq_len, device=hist_item_ids.device, dtype=alpha.dtype).unsqueeze(0)  # [1, L]
+        pos = pos.expand(hist_item_ids.size(0), -1)  # [B, L]
+        recent_dist = (seq_len - 1 - pos).clamp(min=0.0)
+        recency_weights = torch.exp(-self.recency_gamma * recent_dist) * valid_mask.to(alpha.dtype)  # [B, L]
+        recency_term = torch.sum(alpha * recency_weights.unsqueeze(1), dim=-1)  # [B, K]
+
+        # Confidence term from normalized entropy: conf in [0,1], high means clearer interest.
+        entropy = -(alpha * torch.log(alpha + self.fuzzy_eps)).sum(dim=-1)  # [B, K]
+        valid_counts = valid_mask.sum(dim=-1).clamp(min=2).to(alpha.dtype)  # [B]
+        max_entropy = torch.log(valid_counts).unsqueeze(-1)  # [B,1]
+        confidence = 1.0 - (entropy / (max_entropy + self.fuzzy_eps))
+        confidence = confidence.clamp(min=0.0, max=1.0)
+
+        # Fatigue term: if short-window cluster mass is too concentrated, penalize this interest.
+        # beta: [B, L, K]
+        seq_len = hist_item_ids.size(1)
+        window = max(1, min(self.fatigue_window, seq_len))
+        recent_window_mask = torch.zeros_like(valid_mask, dtype=alpha.dtype)
+        recent_window_mask[:, seq_len - window :] = 1.0
+        recent_window_mask = recent_window_mask * valid_mask.to(alpha.dtype)
+        recent_count = recent_window_mask.sum(dim=-1, keepdim=True).clamp(min=1.0)  # [B,1]
+        beta_recent = beta * recent_window_mask.unsqueeze(-1)  # [B,L,K]
+        # recent_ratio in [0,1], larger means this cluster dominates recent interactions.
+        recent_ratio = beta_recent.sum(dim=1) / recent_count  # [B,K]
+        fatigue = recent_ratio.pow(2)
+
+        salience_logits = (
+            self.salience_importance_weight * importance_term
+            + self.salience_recency_weight * recency_term
+            + self.salience_confidence_weight * confidence
+            - self.salience_fatigue_weight * fatigue
+        )
         salience = torch.softmax(salience_logits / self.salience_temperature, dim=-1)
         return salience
 
@@ -199,7 +243,7 @@ class IOSC_encoder_Fuzzy(IOSC_encoder):
         self.latest_adaptive_orth_loss = self.orth_lambda * orth_loss
         self.latest_alpha = alpha
         self.latest_beta = beta
-        self.latest_interest_salience = self._compute_interest_salience(alpha, hist_item_ids)
+        self.latest_interest_salience = self._compute_interest_salience(alpha, beta, hist_item_ids)
 
         user_embed = self.user_emb(users)
         common_prefer = self.fuse_interest_vectors(user_embed, centers)

@@ -1,7 +1,15 @@
 import copy
+import os
 import random
+import sys
+
 import numpy as np
 import torch
+
+CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
+MAIN_DIR = os.path.dirname(CURRENT_DIR)
+if MAIN_DIR not in sys.path:
+    sys.path.insert(0, MAIN_DIR)
 
 from data_utils.SeqDataGenerator import SeqDataCollector
 import model_utils.Trainer as trainer_module
@@ -10,6 +18,8 @@ from model_utils.Trainer_fuzzy import TrainerFuzzyOrth
 from model.IOSCencoder import IOSC_encoder
 from model.IOSCencoder_fuzzy import IOSC_encoder_Fuzzy
 from model.Bert4Rec import BERT_encoder
+from model.ComiRec import ComiRec_encoder
+from model.MIND import MIND_encoder
 from steam_main import config as steam_config
 
 
@@ -173,19 +183,20 @@ def build_and_train(
     trainer.run_co()
     return trainer
 
+
 @torch.no_grad()
 def evaluate_with_candidate_routing(model, test_batches, num_weight_forget=0.5, use_multi_interest=True):
     model.eval()
     current_metrics = {
-        'ndcg_1': 0,
-        'ndcg_5': 0,
-        'ndcg_10': 0,
-        'ndcg_20': 0,
-        'hit_1': 0,
-        'hit_5': 0,
-        'hit_10': 0,
-        'hit_20': 0,
-        'ap': 0,
+        "ndcg_1": 0,
+        "ndcg_5": 0,
+        "ndcg_10": 0,
+        "ndcg_20": 0,
+        "hit_1": 0,
+        "hit_5": 0,
+        "hit_10": 0,
+        "hit_20": 0,
+        "ap": 0,
     }
     test_size = 0
 
@@ -194,18 +205,19 @@ def evaluate_with_candidate_routing(model, test_batches, num_weight_forget=0.5, 
     for test_batch in test_batches:
         user_id, hist_item_ids, _, target_ids = test_batch
         if torch.cuda.is_available():
-            user_id = user_id.to(torch.device('cuda'))
-            hist_item_ids = hist_item_ids.to(torch.device('cuda'))
-            target_ids = target_ids.to(torch.device('cuda'))
+            user_id = user_id.to(torch.device("cuda"))
+            hist_item_ids = hist_item_ids.to(torch.device("cuda"))
+            target_ids = target_ids.to(torch.device("cuda"))
         target_ids = target_ids.type(torch.long)
 
-        # Trigger context encoder forward and build interest set:
-        # - baseline: single interest => K=1
-        # - fuzzy: multi interests => K>1
+        # Trigger context encoder forward and build interest set.
         if model.config.get("rec_model") == "BERT":
             masks = (hist_item_ids != 0).double()
             single_interest = model.context_encoder(hist_item_ids, masks)  # [B, D]
             multi_interests = single_interest.unsqueeze(1)
+        elif model.config.get("rec_model") in ("COMIREC", "MIND"):
+            masks = (hist_item_ids != 0).double()
+            multi_interests = model.context_encoder(hist_item_ids, masks, return_all=True)
         else:
             common_prefer, _, _ = model.context_encoder(user_id, hist_item_ids, num_weight_forget)
             if use_multi_interest and hasattr(model.context_encoder, "get_multi_interest_vectors"):
@@ -219,7 +231,7 @@ def evaluate_with_candidate_routing(model, test_batches, num_weight_forget=0.5, 
         if use_multi_interest and hasattr(model.context_encoder, "score_items_with_interests"):
             scores, _ = model.context_encoder.score_items_with_interests(multi_interests, target_emb)
         else:
-            scores_k = torch.einsum('bkd,bcd->bkc', multi_interests, target_emb)
+            scores_k = torch.einsum("bkd,bcd->bkc", multi_interests, target_emb)
             scores = scores_k.max(dim=1)[0]  # [B, C]
 
         pos_score = scores[:, 0:1]
@@ -228,18 +240,18 @@ def evaluate_with_candidate_routing(model, test_batches, num_weight_forget=0.5, 
 
         for rank in ranks:
             if rank < 1:
-                current_metrics['ndcg_1'] += 1
-                current_metrics['hit_1'] += 1
+                current_metrics["ndcg_1"] += 1
+                current_metrics["hit_1"] += 1
             if rank < 5:
-                current_metrics['ndcg_5'] += 1 / torch.log2(rank + 2)
-                current_metrics['hit_5'] += 1
+                current_metrics["ndcg_5"] += 1 / torch.log2(rank + 2)
+                current_metrics["hit_5"] += 1
             if rank < 10:
-                current_metrics['ndcg_10'] += 1 / torch.log2(rank + 2)
-                current_metrics['hit_10'] += 1
+                current_metrics["ndcg_10"] += 1 / torch.log2(rank + 2)
+                current_metrics["hit_10"] += 1
             if rank < 20:
-                current_metrics['ndcg_20'] += 1 / torch.log2(rank + 2)
-                current_metrics['hit_20'] += 1
-            current_metrics['ap'] += 1.0 / (rank + 1)
+                current_metrics["ndcg_20"] += 1 / torch.log2(rank + 2)
+                current_metrics["hit_20"] += 1
+            current_metrics["ap"] += 1.0 / (rank + 1)
         test_size += user_id.shape[0]
 
     for metric in list(current_metrics.keys()):

@@ -1,11 +1,19 @@
 import os
 import random
+import sys
+
 import torch
+
+CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
+MAIN_DIR = os.path.dirname(CURRENT_DIR)
+if MAIN_DIR not in sys.path:
+    sys.path.insert(0, MAIN_DIR)
+
 from model_utils.Trainer import Trainer
 from data_utils.SeqDataGenerator import SeqDataCollector
 from data_utils.RankingEvaluator import print_dict
 
-torch.multiprocessing.set_sharing_strategy('file_system')
+torch.multiprocessing.set_sharing_strategy("file_system")
 os.environ["CUDA_VISIBLE_DEVICES"] = "0"
 
 
@@ -18,7 +26,7 @@ config = {
     "input_len": 10,
 
     # training settings
-    "rec_model": "COMIREC",  # COMIREC / BERT / SASRec / IOSC / FPMC
+    "rec_model": "COMIREC",  # COMIREC / BERT / SASRec / IOSC / FPMC / MIND
     "train_type": "train",  # train / eval
     "save_epochs": [100, 200, 300, 400],
     "epoch_num": 500,

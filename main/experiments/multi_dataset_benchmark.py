@@ -1,13 +1,23 @@
 import copy
+import os
 import random
+import sys
+
 import numpy as np
 import torch
+
+CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
+MAIN_DIR = os.path.dirname(CURRENT_DIR)
+if MAIN_DIR not in sys.path:
+    sys.path.insert(0, MAIN_DIR)
 
 from data_utils.SeqDataGenerator import SeqDataCollector
 import model_utils.Trainer as trainer_module
 from model.IOSCencoder import IOSC_encoder
 from model.IOSCencoder_fuzzy import IOSC_encoder_Fuzzy
 from model.Bert4Rec import BERT_encoder
+from model.ComiRec import ComiRec_encoder
+from model.MIND import MIND_encoder
 
 import compare_iosc_vs_fuzzy_effective as cmp
 from steam_main import config as steam_cfg
@@ -46,7 +56,13 @@ def prepare_cfg(base_cfg):
     cfg["corr_loss_weight"] = 1.0
     cfg["reliability_threshold"] = 0.15
     cfg["salience_temperature"] = 1.0
-    cfg["item_importance_method"] = "popularity"
+    cfg["item_importance_method"] = "pagerank"
+    cfg["salience_importance_weight"] = 1.0
+    cfg["salience_recency_weight"] = 0.5
+    cfg["salience_confidence_weight"] = 0.3
+    cfg["salience_fatigue_weight"] = 0.25
+    cfg["recency_gamma"] = 0.5
+    cfg["fatigue_window"] = 4
     return cfg
 
 
@@ -68,7 +84,32 @@ def maybe_attach_item_importance(cfg):
     return cfg
 
 
-def train_eval(cfg, model_name):
+@torch.no_grad()
+def evaluate_with_builtin_eval_ranking(model, test_batches):
+    model.eval()
+    metrics = {
+        "ndcg_1": 0.0,
+        "ndcg_5": 0.0,
+        "ndcg_10": 0.0,
+        "ndcg_20": 0.0,
+        "hit_1": 0.0,
+        "hit_5": 0.0,
+        "hit_10": 0.0,
+        "hit_20": 0.0,
+        "ap": 0.0,
+    }
+    test_size = 0
+    for test_batch in test_batches:
+        batch_metrics = model.eval_ranking(test_batch)
+        for k, v in batch_metrics.items():
+            metrics[k] += float(v)
+        test_size += int(test_batch[0].shape[0])
+    for k in list(metrics.keys()):
+        metrics[k] = metrics[k] / max(test_size, 1)
+    return metrics
+
+
+def train_eval(cfg, model_name, eval_mode="routing"):
     seed_all(123)
     cmp.patch_short_epoch_forget_schedule()
     if model_name in ("IOSC", "Fuzzy"):
@@ -78,20 +119,27 @@ def train_eval(cfg, model_name):
         cfg["rec_model"] = "IOSC"
         trainer_cls = cmp.QuickTrainerBase
         trainer_module.IOSC_encoder = IOSC_encoder
-        encoder = IOSC_encoder
         use_multi_interest = False
     elif model_name == "Fuzzy":
         cfg["rec_model"] = "IOSC"
         cfg = maybe_attach_item_importance(cfg)
         trainer_cls = cmp.QuickTrainerFuzzy
         trainer_module.IOSC_encoder = IOSC_encoder_Fuzzy
-        encoder = IOSC_encoder_Fuzzy
         use_multi_interest = True
     elif model_name == "BERT4Rec":
         cfg["rec_model"] = "BERT"
         trainer_cls = cmp.QuickTrainerBase
-        encoder = BERT_encoder
         use_multi_interest = False
+    elif model_name == "ComiRec":
+        cfg["rec_model"] = "COMIREC"
+        trainer_cls = cmp.QuickTrainerBase
+        trainer_module.IOSC_encoder = ComiRec_encoder
+        use_multi_interest = True
+    elif model_name == "MIND":
+        cfg["rec_model"] = "MIND"
+        trainer_cls = cmp.QuickTrainerBase
+        trainer_module.IOSC_encoder = MIND_encoder
+        use_multi_interest = True
     else:
         raise ValueError(model_name)
 
@@ -103,12 +151,18 @@ def train_eval(cfg, model_name):
         max_train_batches=60,
     )
     trainer.run_co()
-    metrics = cmp.evaluate_with_candidate_routing(
-        trainer._model_,
-        trainer._evaluator_1.test_batches,
-        num_weight_forget=0.5,
-        use_multi_interest=use_multi_interest,
-    )
+    if eval_mode == "builtin":
+        metrics = evaluate_with_builtin_eval_ranking(
+            trainer._model_,
+            trainer._evaluator_1.test_batches,
+        )
+    else:
+        metrics = cmp.evaluate_with_candidate_routing(
+            trainer._model_,
+            trainer._evaluator_1.test_batches,
+            num_weight_forget=0.5,
+            use_multi_interest=use_multi_interest,
+        )
     return metrics
 
 
@@ -126,14 +180,14 @@ def main():
             }
         ),
     }
-    models = ["BERT4Rec", "Fuzzy"]
+    models = ["BERT4Rec", "ComiRec", "MIND", "Fuzzy"]
 
     results = {}
     for ds_name, cfg in dataset_cfgs.items():
         results[ds_name] = {}
         for m in models:
             print(f"\n===== Running {m} on {ds_name} =====")
-            results[ds_name][m] = train_eval(copy.deepcopy(cfg), m)
+            results[ds_name][m] = train_eval(copy.deepcopy(cfg), m, eval_mode="builtin")
 
     print("\n=== FINAL_TABLE ===")
     print("| Dataset | Model | NDCG@10 | Hit@10 | AP | NDCG@5 | Hit@5 |")

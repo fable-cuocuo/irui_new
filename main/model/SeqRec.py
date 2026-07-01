@@ -87,7 +87,7 @@ class SeqRec(nn.Module):
             loss_sum = rec_loss_ISC + rec_loss_OSC
             return loss_sum, rec_loss_ISC, rec_loss_OSC, modified_index, common_prefer, personal_prefer
 
-        if self.config['rec_model'] == 'COMIREC':
+        if self.config['rec_model'] == 'COMIREC' or self.config['rec_model'] == 'MIND':
             neg_targets = neg_targets.type(torch.long)
             pos_target = pos_target.unsqueeze(1)
             neg_num = neg_targets.size()[1]
@@ -207,11 +207,24 @@ class SeqRec(nn.Module):
             output = self.recommender_forward(hist_item_ids, masks)
 
         if self.config['rec_model'] == 'IOSC':
-            output = self.recommender_forward(hist_item_ids, masks)
+            # For fuzzy-style IOSC encoders that expose multi-interest scoring,
+            # align evaluation with ComiRec-style max_k routing.
+            if hasattr(self.context_encoder, "score_items_with_interests") and hasattr(self.context_encoder, "get_multi_interest_vectors"):
+                eval_forget = float(self.config.get("eval_num_weight_forget", 0.5))
+                common_prefer, _, _ = self.context_encoder(user_id, hist_item_ids, eval_forget)
+                interest_emb = self.context_encoder.get_multi_interest_vectors()
+                if interest_emb is None:
+                    interest_emb = common_prefer.unsqueeze(1)
+                scores, _ = self.context_encoder.score_items_with_interests(interest_emb, target_emb)
+            else:
+                output = self.recommender_forward(hist_item_ids, masks)
         
-        if self.config['rec_model'] == 'COMIREC':
+        if self.config['rec_model'] == 'COMIREC' or self.config['rec_model'] == 'MIND':
             interest_emb = self.context_encoder(hist_item_ids, masks, return_all=True)
             scores = torch.einsum('bkd,bcd->bkc', interest_emb, target_emb).max(dim=1)[0]
+        elif self.config['rec_model'] == 'IOSC' and hasattr(self.context_encoder, "score_items_with_interests"):
+            # scores already computed in IOSC branch above.
+            pass
         else:
             scores = torch.mul(output.unsqueeze(1), target_emb).sum(dim=2, keepdim=False)
         pos_score = scores[:, 0: 1]

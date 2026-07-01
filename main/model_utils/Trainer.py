@@ -11,6 +11,7 @@ from model.SASRec import SASRec_encoder
 from model.Bert4Rec import BERT_encoder
 from model.IOSCencoder import IOSC_encoder
 from model.ComiRec import ComiRec_encoder
+from model.MIND import MIND_encoder
 
 
 class Trainer:
@@ -175,7 +176,7 @@ class Trainer:
             self._optimizer_.step()
             return all_loss, modified_target_num, modified_hist_num
 
-        if self.config['rec_model'] == 'COMIREC':
+        if self.config['rec_model'] == 'COMIREC' or self.config['rec_model'] == 'MIND':
             self._model_.train()
             self._optimizer_.zero_grad()
             loss = self._model_(user_id, hist_item_ids, masks, pos_target, neg_targets, sample_idices)
@@ -329,6 +330,8 @@ class Trainer:
             return BERT_encoder(self.config)
         elif self.config['rec_model'] == 'COMIREC':
             return ComiRec_encoder(self.config)
+        elif self.config['rec_model'] == 'MIND':
+            return MIND_encoder(self.config)
         elif self.config['rec_model'] == 'IOSC':
             return IOSC_encoder(self.config)
 
